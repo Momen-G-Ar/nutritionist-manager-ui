@@ -1,0 +1,12 @@
+{
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "javascript.format.semicolons": "insert",
+    "cSpell.words": [
+        "Nemo",
+        "premmitedroles",
+        "TTFB",
+        "webp"
+    ]
+}
