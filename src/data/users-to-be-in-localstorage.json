@@ -1,0 +1,20 @@
+{
+    "USERS": [
+        {
+            "email": "momen@example.com",
+            "password": "123456"
+        },
+        {
+            "email": "momen2@example.com",
+            "password": "1234567"
+        },
+        {
+            "email": "momen3@example.com",
+            "password": "12345678"
+        },
+        {
+            "email": "momen4@example.com",
+            "password": "123456789"
+        }
+    ]
+}

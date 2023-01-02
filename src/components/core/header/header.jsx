@@ -9,16 +9,19 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='left'>
-                <span>
-                    <Heartbeat size={45} color="#01660c" weight="fill" />
+                <span className='heartbeat'>
+                    <Heartbeat size={32} color="#01660c" weight="bold" />
                 </span>
-                <span>
+                <span className='titleInHeader'>
                     nutritionist clinic
                 </span>
             </div>
             <div className='right'>
-                <span onClick={() => { navigate('/home-page', { replace: true }); }}>
-                    <House size={32} color="#01660c" weight="fill" />
+                <span
+                    className='house'
+                    onClick={() => { navigate('/home-page', { replace: true }); }}
+                >
+                    <House size={32} color="#01660c" weight="bold" />
                 </span>
             </div>
         </div>

@@ -11,7 +11,7 @@ import { Button, ConfigProvider } from 'antd';
  * }} props 
  * @returns 
  */
-const PrimaryButton = (props) => {
+const CustomButton = (props) => {
 
     return (
         <ConfigProvider
@@ -31,4 +31,4 @@ const PrimaryButton = (props) => {
     );
 };
 
-export default PrimaryButton;
+export default CustomButton;

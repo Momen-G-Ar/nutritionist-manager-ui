@@ -2,9 +2,8 @@ import './home.css';
 
 import React from 'react';
 
-
 import { useNavigate } from 'react-router-dom';
-import PrimaryButton from '../../components/common/primary-button/primary-button';
+import CustomButton from '../../components/common/custom-button/custom-button';
 
 
 const HomePage = () => {
@@ -20,24 +19,24 @@ const HomePage = () => {
             </div>
             <div className='buttons'>
 
-                <PrimaryButton
+                <CustomButton
                     type='primary'
                     onClick={() => navigate('/new-program', { replace: true })}
                 >
                     new diet program
-                </PrimaryButton>
-                <PrimaryButton
+                </CustomButton>
+                <CustomButton
                     type='primary'
                     onClick={() => navigate('/manage-food-table', { replace: true })}
                 >
                     manage food table
-                </PrimaryButton>
-                <PrimaryButton
+                </CustomButton>
+                <CustomButton
                     type='primary'
                     onClick={() => navigate('/view-programs', { replace: true })}
                 >
                     view existing programs
-                </PrimaryButton>
+                </CustomButton>
 
             </div>
         </div>

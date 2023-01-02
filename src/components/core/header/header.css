@@ -8,6 +8,7 @@
     border-bottom: 1px solid #00b96b;
     box-shadow: 1px 1px 10px 3px #14c727;
     position: static;
+    user-select: none;
 }
 
 .header .left {
@@ -19,17 +20,27 @@
     text-transform: capitalize;
 }
 
-.header .left span {
+.header .left .heartbeat {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 25px;
+    margin-left: 20px;
     font-size: 35px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #01660c;
     font-weight: 600;
 }
 
+.header .left .titleInHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #01660c;
+    font-weight: 600;
+}
 
 .header .right {
     display: flex;
@@ -40,10 +51,10 @@
 
 }
 
-.header .right span {
+.header .right .house {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 20px;
     cursor: pointer;
 }
