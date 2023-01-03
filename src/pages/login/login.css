@@ -15,13 +15,28 @@
 .login .right .infoHolder {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid #00b96b;
     box-shadow: 3px 2px 5px 1px #00b96b;
     border-radius: 5px;
     width: 360px;
     height: 400px;
+    row-gap: 16px;
+}
+
+.login .right .infoHolder h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #00b96b;
+    text-shadow: 1px 1px 3px #002b05;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-right: 25px;
 }
 
 .login .left {

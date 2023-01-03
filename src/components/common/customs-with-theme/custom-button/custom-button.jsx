@@ -6,7 +6,8 @@ import { Button, ConfigProvider } from 'antd';
  * @param {{
  *  value:String;
  *  type?:String;
- *  onClick?: (React.MouseEventHandler<HTMLAnchorElement> & React.MouseEventHandler<HTMLButtonElement>) | undefined
+ *  onClick?: (React.MouseEventHandler<HTMLAnchorElement> & 
+ *      React.MouseEventHandler<HTMLButtonElement>) | undefined;
  *  children:never[];
  * }} props 
  * @returns 
@@ -21,8 +22,9 @@ const CustomButton = (props) => {
             }}
         >
             <Button
+                className={props.className}
                 type={props.type}
-                onClick={() => props.onClick()}
+                onClick={() => props.onClick}
             >
                 {props.children}
             </Button>
