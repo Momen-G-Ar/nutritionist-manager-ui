@@ -12,7 +12,6 @@ import { Button, ConfigProvider } from 'antd';
  * @returns 
  */
 const CustomButton = (props) => {
-
     return (
         <ConfigProvider
             theme={{

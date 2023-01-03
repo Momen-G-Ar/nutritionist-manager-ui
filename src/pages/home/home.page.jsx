@@ -3,12 +3,11 @@ import './home.css';
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import CustomButton from '../../components/common/custom-button/custom-button';
+import CustomButton from '../../components/common/customs-with-theme/custom-button/custom-button';
 
-
+// TODO: switch the image line: 14 -> image slider
 const HomePage = () => {
     const navigate = useNavigate();
-
     return (
         <div className='homePage'>
             <div className='image'>

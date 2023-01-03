@@ -1,0 +1,54 @@
+.login {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.login .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+    height: 92.1vh;
+}
+
+.login .right .infoHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00b96b;
+    box-shadow: 3px 2px 5px 1px #00b96b;
+    border-radius: 5px;
+    width: 360px;
+    height: 400px;
+}
+
+.login .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 60%;
+    height: 92.1vh;
+
+}
+
+.login .left .primaryCarousel {
+    width: 500px;
+    height: 50vh;
+}
+
+.login .left img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    border: 0.01em solid #00b96b;
+    border-radius: 5px;
+}
+
+.login .left .primaryCarousel img {
+    display: flex;
+    width: 400px;
+    height: 300px;
+}
