@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 92.1vh;
 }
 
@@ -43,9 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 60%;
+    flex-basis: 50%;
     height: 92.1vh;
-
 }
 
 .login .left .primaryCarousel {
