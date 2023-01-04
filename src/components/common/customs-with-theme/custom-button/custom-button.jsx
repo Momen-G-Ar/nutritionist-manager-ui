@@ -24,7 +24,7 @@ const CustomButton = (props) => {
             <Button
                 className={props.className}
                 type={props.type}
-                onClick={() => props.onClick}
+                onClick={props.onClick}
             >
                 {props.children}
             </Button>
