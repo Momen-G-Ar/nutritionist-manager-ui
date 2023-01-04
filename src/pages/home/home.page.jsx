@@ -1,13 +1,20 @@
 import './home.css';
 
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import CustomButton from '../../components/common/customs-with-theme/custom-button/custom-button';
+import { UserContext } from './../../components/providers/user-provider.component';
 
 // TODO: switch the image line: 14 -> image slider
 const HomePage = () => {
     const navigate = useNavigate();
+    const user_context = useContext(UserContext);
+    useEffect(() => {
+        if (user_context.user) {
+            navigate('/login', { replace: true });
+        }
+    }, [user_context, navigate]);
     return (
         <div className='homePage'>
             <div className='image'>

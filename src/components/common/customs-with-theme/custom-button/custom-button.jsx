@@ -8,7 +8,7 @@ import { Button, ConfigProvider } from 'antd';
  *  type?:String;
  *  onClick?: (React.MouseEventHandler<HTMLAnchorElement> & 
  *      React.MouseEventHandler<HTMLButtonElement>) | undefined;
- *  children:never[];
+ *  children:React.ReactNode;
  * }} props 
  * @returns 
  */

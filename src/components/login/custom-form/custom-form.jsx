@@ -1,12 +1,40 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Checkbox, Form, Button, ConfigProvider, Input } from 'antd';
+import { handleLogin, setSessionStorage } from '../../../services/login';
+import { useNavigate } from 'react-router-dom';
 
-const CustomForm = () => {
 
+/**
+ * Form to take the user info and login its account
+ * @param {{
+ *  setUser:React.Dispatch<any>;
+ * }} props 
+ * @returns 
+ */
+const CustomForm = (props) => {
+    const navigate = useNavigate();
+    const [wrong, setWrong] = useState(false);
+    /**
+     * Function to take the input fields and send them to the destination handleLogin
+     * @param {{
+     *  user_name:String;
+     *  password:String;
+     * }} values 
+     */
     const onFinish = (values) => {
-        console.log('Success:', values);
+        const result_from_handle = handleLogin(values.user_name, values.password);
+        if (result_from_handle) {
+            setWrong(false);
+            props.setUser(result_from_handle);
+            setSessionStorage(result_from_handle);
+            navigate('/home-page', { replace: true });
+        }
+        else {
+            setWrong(true);
+        }
+
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -40,7 +68,7 @@ const CustomForm = () => {
             >
                 <Form.Item
                     label="Username"
-                    name="username"
+                    name="user_name"
                     rules={[
                         {
                             required: true,
@@ -63,7 +91,22 @@ const CustomForm = () => {
                 >
                     <Input.Password />
                 </Form.Item>
-
+                {
+                    wrong &&
+                    <span
+                        style={{
+                            display: 'flex',
+                            fontFamily: 'sans-serif',
+                            fontSize: '16px',
+                            textTransform: 'capitalize',
+                            color: 'red',
+                            justifySelf: 'flex-start',
+                            marginBottom: '16px'
+                        }}
+                    >
+                        *invalid credentials
+                    </span>
+                }
                 <Form.Item
                     name="remember"
                     valuePropName="checked"
