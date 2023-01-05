@@ -1,0 +1,44 @@
+.addNewFood {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 96%;
+    min-height: 150px;
+    border: 1px solid #01660c;
+    box-shadow: 2px 2px 5px 0px #00820e;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.addNewFood form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addNewFood form .inputInForm {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 98.5%;
+}
+
+.addNewFood form .buttonInForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 150px;
+    margin-right: 32px;
+    margin-top: 16px;
+}
+
+.addNewFood form .buttonInForm button {
+    width: 150px;
+}

@@ -9,6 +9,7 @@ import { Button, ConfigProvider } from 'antd';
  *  onClick?: (React.MouseEventHandler<HTMLAnchorElement> & 
  *      React.MouseEventHandler<HTMLButtonElement>) | undefined;
  *  children:React.ReactNode;
+ *  htmlType?:String;
  * }} props 
  * @returns 
  */
@@ -22,6 +23,7 @@ const CustomButton = (props) => {
             }}
         >
             <Button
+                htmlType={props.htmlType}
                 className={props.className}
                 type={props.type}
                 onClick={props.onClick}
