@@ -39,19 +39,22 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
+    width: 97%;
     margin-top: 64px;
     margin-left: 32px;
 }
 
 .foodTable .wrapper .foodItemsHolder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
     justify-content: flex-start;
     align-items: flex-start;
     row-gap: 20px;
-    width: 96%;
-    height: 600px;
+    width: 98%;
+    height: auto;
     overflow: auto;
+    padding-bottom: 50px;
 }
 

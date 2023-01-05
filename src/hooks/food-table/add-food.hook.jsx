@@ -41,9 +41,7 @@ const useFood = () => {
      * @param {String} id 
      */
     const deleteFoodItem = (id) => {
-        const newTable = foodTable.every((food) => {
-            return food.id !== id;
-        });
+        const newTable = foodTable.filter((food) => (food.id !== id));
         setFoodTable(newTable);
         localStorage.setItem('food_table', JSON.stringify(newTable));
     };

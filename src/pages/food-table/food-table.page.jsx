@@ -17,7 +17,7 @@ const FoodTable = () => {
         if (!user_context.user) {
             navigate('/login', { replace: true });
         }
-    }, [user_context, navigate, foodTable]);
+    }, [user_context, navigate]);
 
     return (
         <div className='foodTable'>
@@ -44,7 +44,11 @@ const FoodTable = () => {
                 <div className='foodItemsHolder'>
                     {
                         foodTable.map((food, i) => {
-                            return <FoodItem key={i}/>;
+                            return <FoodItem
+                                key={i}
+                                food={food}
+                                deleteFoodItem={deleteFoodItem}
+                            />;
                         })
                     }
                 </div>

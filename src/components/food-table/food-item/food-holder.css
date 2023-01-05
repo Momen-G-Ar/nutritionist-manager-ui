@@ -1,11 +1,60 @@
 .foodHolder {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 99%;
-    min-height: 180px;
+    width: 300px;
+    min-height: 350px;
     border: 1px solid #01660c;
     box-shadow: 2px 2px 5px 0px #00820e;
     border-radius: 5px;
+}
+
+.foodHolder img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+
+}
+
+.foodHolder h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: #00820e;
+}
+
+.foodHolder h5 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    color: #00820e;
+    text-shadow: 0.1em 0.1em 3px #36ef4a;
+    font-weight: 500;
+}
+
+.foodHolder .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-end;
+    width: 80%;
+    height: 60px;
+    margin-right: 16px;
 }
