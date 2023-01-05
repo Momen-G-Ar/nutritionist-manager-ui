@@ -1,3 +1,15 @@
 .newProgram {
     display: flex;
 }
+
+.newProgram .statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 300px;
+    height: 380px;
+    border: 1px solid #01660c;
+    border-radius: 5px;
+    margin-right: 32px;
+}
