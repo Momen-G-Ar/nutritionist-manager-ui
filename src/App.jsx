@@ -8,23 +8,32 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/core/header/header';
 import UserProvider from './components/providers/user-provider.component';
 import FoodTable from './pages/food-table/food-table.page';
+import { ConfigProvider } from 'antd';
 
 const App = () => {
     return (
-        <div className="App">
-            <UserProvider>
-                <BrowserRouter>
-                    <Header />
-                    <Routes>
-                        <Route path='/*' element={<HomePage />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/home-page' element={<HomePage />} />
-                        <Route path='/new-program' element={<NewProgram />} />
-                        <Route path='/manage-food-table' element={<FoodTable />} />
-                    </Routes>
-                </BrowserRouter>
-            </UserProvider>
-        </div>
+        <ConfigProvider
+            theme={{
+                token: {
+                    colorPrimary: '#00b96b',
+                },
+            }}
+        >
+            <div className="App">
+                <UserProvider>
+                    <BrowserRouter>
+                        <Header />
+                        <Routes>
+                            <Route path='/*' element={<HomePage />} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/home-page' element={<HomePage />} />
+                            <Route path='/manage-food-table' element={<FoodTable />} />
+                            <Route path='/new-program' element={<NewProgram />} />
+                        </Routes>
+                    </BrowserRouter>
+                </UserProvider>
+            </div>
+        </ConfigProvider>
     );
 };
 

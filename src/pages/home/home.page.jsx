@@ -3,8 +3,8 @@ import './home.css';
 import React, { useContext, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import CustomButton from '../../components/common/customs-with-theme/custom-button/custom-button';
 import { UserContext } from './../../components/providers/user-provider.component';
+import { Button } from 'antd';
 
 // TODO: switch the image line: 14 -> image slider
 const HomePage = () => {
@@ -24,7 +24,7 @@ const HomePage = () => {
                 />
             </div>
             <div className='buttons'>
-                <CustomButton
+                <Button
                     type='primary'
                     onClick={() => {
                         console.log(1);
@@ -32,19 +32,19 @@ const HomePage = () => {
                     }}
                 >
                     new diet program
-                </CustomButton>
-                <CustomButton
+                </Button>
+                <Button
                     type='primary'
                     onClick={() => navigate('/manage-food-table', { replace: true })}
                 >
                     manage food table
-                </CustomButton>
-                <CustomButton
+                </Button>
+                <Button
                     type='primary'
                     onClick={() => navigate('/view-programs', { replace: true })}
                 >
                     view existing programs
-                </CustomButton>
+                </Button>
             </div>
         </div>
     );

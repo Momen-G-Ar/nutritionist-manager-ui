@@ -2,7 +2,7 @@ import './add-food-form.css';
 
 import React from 'react';
 import Input from '../input/input';
-import CustomButton from '../../common/customs-with-theme/custom-button/custom-button';
+import { Button } from 'antd';
 
 /**
  * 
@@ -62,12 +62,12 @@ const AddFoodForm = (props) => {
                     />
                 </div>
                 <div className="buttonInForm">
-                    <CustomButton
+                    <Button
                         htmlType="submit"
                         type='primary'
                     >
                         Add
-                    </CustomButton>
+                    </Button>
                 </div>
             </form>
         </div>
