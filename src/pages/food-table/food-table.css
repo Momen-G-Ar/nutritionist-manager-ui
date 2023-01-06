@@ -40,7 +40,7 @@
     align-items: flex-start;
     flex-direction: column;
     width: 97%;
-    margin-top: 64px;
+    margin-top: 34px;
     margin-left: 32px;
 }
 
@@ -58,3 +58,19 @@
     padding-bottom: 50px;
 }
 
+.foodTable .wrapper .foodItemsHolder .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b96b;
+    font-weight: 700;
+    user-select: none;
+}

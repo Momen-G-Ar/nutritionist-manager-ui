@@ -8,6 +8,7 @@ import { UserContext } from './../../components/providers/user-provider.componen
 import AddFoodForm from '../../components/food-table/add-food-form/add-food-form.component';
 import FoodItem from './../../components/food-table/food-item/food-holder.component';
 import { Button } from 'antd';
+import emptyList from '../../asserts/empty-box-100.png';
 
 const FoodTable = () => {
     const { addNew, foodTable, addFoodItem, deleteFoodItem, showAddNew, hideAddNew } = useFood();
@@ -42,15 +43,23 @@ const FoodTable = () => {
                         addFoodItem={addFoodItem}
                     />
                 }
-                <div className='foodItemsHolder'>
+                <div
+                    className='foodItemsHolder'
+                    style={{ justifyContent: `${foodTable.length ? 'flex-start' : 'center'}` }}
+                >
                     {
-                        foodTable.map((food, i) => {
-                            return <FoodItem
-                                key={i}
-                                food={food}
-                                deleteFoodItem={deleteFoodItem}
-                            />;
-                        })
+                        (foodTable.length)
+                            ? foodTable.map((food, i) => {
+                                return <FoodItem
+                                    key={i}
+                                    food={food}
+                                    deleteFoodItem={deleteFoodItem}
+                                />;
+                            })
+                            : <div className='empty'>
+                                <img src={emptyList} alt='empty list' />
+                                <span>No Foods</span>
+                            </div>
                     }
                 </div>
             </div>

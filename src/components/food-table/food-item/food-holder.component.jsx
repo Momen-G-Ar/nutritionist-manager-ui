@@ -4,6 +4,7 @@ import React from 'react';
 
 import CustomSpaceSplit from '../custom-space-split/custom-space-split';
 import { Trash, PencilSimpleLine } from 'phosphor-react';
+import { Image } from 'antd';
 
 /**
  * A card to render the food item description in it
@@ -22,13 +23,13 @@ import { Trash, PencilSimpleLine } from 'phosphor-react';
 const FoodItem = (props) => {
     return (
         <div className='foodHolder'>
-            <img src={props.food.image} alt={props.food.name} />
+            <Image className='customImage' src={props.food.image} alt={props.food.name} />
             <h3>{props.food.name}</h3>
             <h5>amount: {props.food.amount}</h5>
             <h5>calories: {props.food.calories}</h5>
             <div className='buttons'>
                 <CustomSpaceSplit>
-                    <span onClick={() => {props.deleteFoodItem(props.food.id)}}>
+                    <span onClick={() => { props.deleteFoodItem(props.food.id); }}>
                         <Trash
                             size={22}
                             color="#046c41"
