@@ -2,8 +2,6 @@ import './login.css';
 
 import React, { useContext, useEffect } from 'react';
 
-// import CustomCarousel from '../../components/common/custom-carousel/custom-carousel';
-// import { LOGIN_IMAGES } from '../../data/carousel-images';
 import { UserContext } from './../../components/providers/user-provider.component';
 import { useNavigate } from 'react-router-dom';
 import CustomForm from './../../components/login/custom-form/custom-form';
@@ -22,7 +20,6 @@ const Login = () => {
     return (
         <div className='login'>
             <div className='left'>
-                {/* <CustomCarousel IMAGES={LOGIN_IMAGES} /> */}
                 <img
                     src="https://tampacardio.com/wp-content/uploads/2021/04/Tampa-cardio-nutritionist-tampa.jpg"
                     alt="food"

@@ -47,11 +47,11 @@ const useFood = () => {
     };
 
     const showAddNew = () => {
-        setAddNew(true);
+        setAddNew(false);
     };
 
     const hideAddNew = () => {
-        setAddNew(false);
+        setAddNew(true);
     };
 
     return {

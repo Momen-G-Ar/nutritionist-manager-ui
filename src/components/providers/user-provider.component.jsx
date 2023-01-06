@@ -11,10 +11,12 @@ export const UserContext = createContext(null);
  */
 const UserProvider = (props) => {
     const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')) || null);
+
     const deleteUser = () => {
         setUser(null);
         sessionStorage.removeItem('user');
     };
+
     return (
         <UserContext.Provider value={{ user, setUser, deleteUser }}>
             {props.children}

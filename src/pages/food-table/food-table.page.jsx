@@ -27,13 +27,12 @@ const FoodTable = () => {
                 <h2>food table</h2>
                 {
                     addNew
-                        ? <Button type='primary' onClick={hideAddNew}>
+                        ? <Button type='primary' onClick={showAddNew}>
                             Add New
                         </Button>
-                        : <Button type='primary' onClick={showAddNew}>
+                        : <Button type='primary' onClick={hideAddNew}>
                             Hide Add New
                         </Button>
-
                 }
             </div>
             <div className='wrapper'>
