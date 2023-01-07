@@ -5,7 +5,7 @@ import Input from '../input/input';
 import { Button } from 'antd';
 
 /**
- * 
+ * Form to add food to the foodTable
  * @param {{
  *  addFoodItem:(food:{
  *  id: string;

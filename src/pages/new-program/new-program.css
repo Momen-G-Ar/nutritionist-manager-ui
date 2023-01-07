@@ -1,15 +1,32 @@
 .newProgram {
     display: flex;
-}
-
-.newProgram .statistics {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 300px;
-    height: 380px;
-    border: 1px solid #01660c;
-    border-radius: 5px;
-    margin-right: 32px;
+}
+
+.newProgram .titleInNewProgram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+    margin-left: 32px;
+    text-transform: capitalize;
+    font-size: 27px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #01660c;
+    font-weight: 700;
+}
+
+.newProgram form {
+    width: 97%;
+    height: 100%;
+}
+
+.newProgram form> .personInfoAndStat{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
 }

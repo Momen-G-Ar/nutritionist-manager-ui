@@ -1,8 +1,8 @@
 import './App.css';
 
 import HomePage from './pages/home/home.page';
-import NewProgram from './pages/new-program/new-program.page';
 import Login from './pages/login/login.page';
+import NewProgram from './pages/new-program/new-program.page';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/core/header/header';

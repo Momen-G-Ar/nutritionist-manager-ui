@@ -1,0 +1,91 @@
+.addNewPerson {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 65%;
+    min-height: 260px;
+    border: 1px solid #01660c;
+    box-shadow: 2px 2px 5px 0px #00820e;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.addNewPerson h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 22px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #01660c;
+    font-weight: 700;
+    width: 100%;
+}
+
+.addNewPerson .inputInForm {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 98.5%;
+}
+
+.addNewPerson .inputInForm input {
+    border-radius: 5px;
+}
+
+.addNewPerson .inputInForm input:focus {
+    border-color: #20c77c;
+    box-shadow: 0 0 0 2px rgba(5 213 8 /12%);
+}
+
+.addNewPerson .inputInForm .inputGroup input.datePicker {
+    display: flex;
+    width: 290px;
+}
+
+.addNewPerson .inputInForm .selectInPersonInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px;
+    margin-left: 16px;
+    width: 350px;
+}
+
+.addNewPerson .inputInForm .selectInPersonInfo>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 40px;
+}
+
+.addNewPerson .inputInForm .selectInPersonInfo>div>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 40px;
+}
+
+.addNewPerson .inputInForm .selectInPersonInfo>label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+.addNewPerson .inputInForm .selectInPersonInfo>label>span:nth-child(2) {
+    color: rgb(210, 21, 21);
+}
