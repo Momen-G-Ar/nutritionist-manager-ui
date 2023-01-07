@@ -2,7 +2,7 @@ import './food-table.css';
 
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useFood from './../../hooks/food-table/add-food.hook';
+import useFood from '../../hooks/food-table/useFood.hook';
 
 import { UserContext } from './../../components/providers/user-provider.component';
 import AddFoodForm from '../../components/food-table/add-food-form/add-food-form.component';
@@ -11,7 +11,7 @@ import { Button } from 'antd';
 import emptyList from '../../asserts/empty-box-100.png';
 
 const FoodTable = () => {
-    const { addNew, foodTable, addFoodItem, deleteFoodItem, showAddNew, hideAddNew } = useFood();
+    const { addNew, foodTable, addFoodItem, deleteFoodItem, editFoodItem, showAddNew, hideAddNew } = useFood();
     const navigate = useNavigate();
     const user_context = useContext(UserContext);
 
@@ -53,6 +53,7 @@ const FoodTable = () => {
                                     key={i}
                                     food={food}
                                     deleteFoodItem={deleteFoodItem}
+                                    editFoodItem={editFoodItem}
                                 />;
                             })
                             : <div className='empty'>

@@ -4,15 +4,36 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 300px;
-    min-height: 350px;
+    min-height: 365px;
     border: 1px solid #01660c;
     box-shadow: 2px 2px 5px 0px #00820e;
     border-radius: 5px;
 }
 
-.foodHolder .customImage{
+.foodHolder form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.foodHolder form .inputGroup input {
+    width: 220px;
+}
+
+.foodHolder form .saveAndCancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+    column-gap: 55px;
+}
+
+.foodHolder .customImage {
     width: 300px;
-    height: 200px ;
+    height: 200px;
 }
 
 .foodHolder img {
