@@ -14,5 +14,13 @@
     {
         "user_name": "momen4",
         "password": "123456789"
+    },
+    {
+        "user_name": "qusai",
+        "password": "qa123456789"
+    },
+    {
+        "user_name": "khaldon",
+        "password": "kh123456789"
     }
 ]
