@@ -1,4 +1,4 @@
-.input-group{
+.inputGroup{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -7,7 +7,7 @@
     margin-left: 16px;
 }
 
-.input-group>input {
+.inputGroup>input {
     width: 250px;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
@@ -24,7 +24,7 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.input-group>label {
+.inputGroup>label {
     display: block;
     margin-bottom: 5px;
     font-size: 12px;
@@ -34,11 +34,11 @@
     letter-spacing: 0.5px;
 }
 
-.input-group>label>span:nth-child(2) {
+.inputGroup>label>span:nth-child(2) {
     color: rgb(210, 21, 21);
 }
 
-.input-group>input:focus {
+.inputGroup>input:focus {
     color: #212529;
     background-color: #fff;
     border-color: #00b96b;
