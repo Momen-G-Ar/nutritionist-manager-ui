@@ -1,11 +1,6 @@
 
 import { useState } from "react";
 
-
-
-
-
-
 const useFood = () => {
     /**
     * To give a types fo the food table
@@ -46,6 +41,27 @@ const useFood = () => {
         localStorage.setItem('food_table', JSON.stringify(newTable));
     };
 
+    /**
+     * To edit the food item in the table and add the newTable in localStorage
+     * @param {{
+     *  id:String;
+     *  name:String;
+     *  image:String;
+     *  amount:Number;
+     *  calories:Number;
+     * }} food 
+     */
+    const editFoodItem = (food) => {
+        const newTable = foodTable.map(item => {
+            if (food.id === item.id) {
+                item = food;
+            }
+            return item;
+        });
+        setFoodTable(newTable);
+        localStorage.setItem('food_table', JSON.stringify(newTable));
+    };
+
     const showAddNew = () => {
         setAddNew(false);
     };
@@ -59,6 +75,7 @@ const useFood = () => {
         foodTable,
         addFoodItem,
         deleteFoodItem,
+        editFoodItem,
         showAddNew,
         hideAddNew,
     };
