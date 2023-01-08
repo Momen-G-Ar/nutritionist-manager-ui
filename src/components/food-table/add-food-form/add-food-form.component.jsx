@@ -1,7 +1,7 @@
 import './add-food-form.css';
 
 import React from 'react';
-import Input from '../input/input';
+import Input from '../../common/input/input';
 import { Button } from 'antd';
 
 /**

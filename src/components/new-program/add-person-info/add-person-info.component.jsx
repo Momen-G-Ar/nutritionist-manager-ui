@@ -2,7 +2,7 @@ import './add-person-info.css';
 
 import React from 'react';
 
-import Input from './../../food-table/input/input';
+import Input from '../../common/input/input';
 import { Select } from 'antd';
 
 const options_of_select = [

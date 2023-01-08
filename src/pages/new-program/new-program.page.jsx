@@ -32,9 +32,9 @@ const NewProgram = () => {
             <form onSubmit={handleAddProgram}>
                 <div className='personInfoAndStat'>
                     <AddPersonInfo setSelectedCity={setSelectedCity} />
-                    <Statistics />
+                    <Statistics number_of_meals={0} total_calories={0} />
                 </div>
-                <input type='submit' value={'submit'} />
+
             </form>
         </div>
     );

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import CustomSpaceSplit from '../custom-space-split/custom-space-split';
 import { Trash, PencilSimpleLine } from 'phosphor-react';
 import { Button, Image } from 'antd';
-import Input from '../input/input';
+import Input from '../../common/input/input';
 
 /**
  * A card to render the food item description in it
@@ -69,8 +69,8 @@ const FoodItem = (props) => {
                     : <>
                         <Image className='customImage' src={props.food.image} alt={props.food.name} />
                         <h3>{props.food.name}</h3>
-                        <h5>amount: {props.food.amount + " (g\\ml)"} </h5>
-                        <h5>calories: {props.food.calories} cal</h5>
+                        <h5> amount: {props.food.amount + " (g\\ml)"} </h5>
+                        <h5> calories: {props.food.calories + " Kcal"} </h5>
                         <div className='buttons'>
                             <CustomSpaceSplit>
                                 <span onClick={() => { props.deleteFoodItem(props.food.id); }}>

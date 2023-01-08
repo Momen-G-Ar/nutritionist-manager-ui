@@ -1,10 +1,10 @@
 .statistics {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 35%;
-    min-height: 260px;
+    height: 225px;
     border: 1px solid #01660c;
     box-shadow: 2px 2px 5px 0px #00820e;
     border-radius: 5px;
@@ -19,10 +19,46 @@
     justify-content: center;
     align-items: center;
     margin-top: 5px;
+    margin-bottom: 0;
     margin-left: 22px;
     text-transform: capitalize;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #01660c;
     font-weight: 700;
+}
+
+.statistics .state {
+    display: flex;
+    flex-direction: column;
+
+    height: 180px;
+    width: 100%;
+}
+
+.statistics .state>span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 16px;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #666;
+    text-shadow: 1px 1px 3px #01660c;
+    font-weight: 700;
+    padding-left: 22px;
+    margin-top: 20px;
+}
+
+.statistics .saveButton {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.statistics .saveButton button {
+    display: flex;
+    margin-right: 16px;
+    margin-bottom: 8px;
 }

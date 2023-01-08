@@ -1,5 +1,6 @@
-import React from 'react';
 import './input.css';
+
+import React from 'react';
 
 /**
  * Renders an input element.
