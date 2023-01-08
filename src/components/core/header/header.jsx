@@ -8,7 +8,7 @@ import { UserContext } from './../../providers/user-provider.component';
 const Header = () => {
     const navigate = useNavigate();
     const user = useContext(UserContext);
-    
+
     const handleSingOut = () => {
         user.deleteUser();
     };
@@ -24,20 +24,22 @@ const Header = () => {
                 </span>
             </div>
             <div className='right'>
-                <span
-                    className='house'
-                    onClick={() => { navigate('/home-page', { replace: true }); }}
-                >
-                    <House size={32} color="#01660c" weight="bold" />
-                </span>
                 {
                     (window.location.pathname !== '/login') &&
-                    <span
-                        className='singOut'
-                        onClick={handleSingOut}
-                    >
-                        <SignOut size={32} color="#01660c" weight="bold" />
-                    </span>
+                    <>
+                        <span
+                            className='house'
+                            onClick={() => { navigate('/home-page', { replace: true }); }}
+                        >
+                            <House size={32} color="#01660c" weight="bold" />
+                        </span>
+                        <span
+                            className='singOut'
+                            onClick={handleSingOut}
+                        >
+                            <SignOut size={32} color="#01660c" weight="bold" />
+                        </span>
+                    </>
                 }
             </div>
         </div>
