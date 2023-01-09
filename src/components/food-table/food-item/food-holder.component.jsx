@@ -58,8 +58,8 @@ const FoodItem = (props) => {
                         <form onSubmit={handleEditFood}>
                             <Input defaultValue={props.food.name} label={'name'} name={'name'} required />
                             <Input defaultValue={props.food.image} label={'image src'} name={'image'} required />
-                            <Input defaultValue={props.food.amount} label={'amount'} name={'amount'} required />
-                            <Input defaultValue={props.food.calories} label={'calories'} name={'calories'} required />
+                            <Input defaultValue={props.food.amount} label={'amount'} name={'amount'} required type={'number'} />
+                            <Input defaultValue={props.food.calories} label={'calories'} name={'calories'} required type={'number'} />
                             <div className='saveAndCancel'>
                                 <Button type='primary' htmlType='submit'>Save</Button>
                                 <Button type='primary' onClick={() => setEdit(false)}>Cancel</Button>

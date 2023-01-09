@@ -1,0 +1,44 @@
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ced4da;
+    border-bottom: 1px solid #00b96b;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    user-select: none;
+    text-transform: capitalize;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ced4da;
+    border-bottom: 1px solid #00b96b;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    user-select: none;
+    text-transform: capitalize;
+    color: #212529;
+    border-color: #00b96b;
+    outline: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.day:active {
+    color: #212529;
+    border-color: #00b96b;
+    outline: 0;
+    border-bottom: 1px solid #fff;
+}

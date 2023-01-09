@@ -51,11 +51,13 @@ const AddFoodForm = (props) => {
                         required
                     />
                     <Input
+                        type={'number'}
                         name='amount'
                         label='amount'
                         required
                     />
                     <Input
+                        type={'number'}
                         name='calories'
                         label='calories'
                         required

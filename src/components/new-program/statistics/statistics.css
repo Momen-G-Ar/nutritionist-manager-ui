@@ -31,7 +31,6 @@
 .statistics .state {
     display: flex;
     flex-direction: column;
-
     height: 180px;
     width: 100%;
 }

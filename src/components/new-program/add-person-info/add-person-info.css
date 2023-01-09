@@ -58,6 +58,7 @@
     padding: 8px;
     margin-left: 16px;
     width: 350px;
+    margin-bottom: 2px;
 }
 
 .addNewPerson .inputInForm .selectInPersonInfo>div {

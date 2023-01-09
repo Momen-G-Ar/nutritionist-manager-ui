@@ -3,26 +3,11 @@ import './new-program.css';
 import React from 'react';
 import AddPersonInfo from './../../components/new-program/add-person-info/add-person-info.component';
 import Statistics from './../../components/new-program/statistics/statistics.component';
-import { useState } from 'react';
+import WeekTable from '../../components/new-program/week-table/week-table.component';
+import useProgram from '../../hooks/new-program/useProgram';
 
 const NewProgram = () => {
-    const [selectedCity, setSelectedCity] = useState('Hebron');
-    /**
-    * Handler function for the form onSubmit event.
-    * @param {React.FormEvent<HTMLFormElement>} e Event object.
-    */
-    const handleAddProgram = (e) => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const phone = e.target.phone.value;
-        const email = e.target.email.value;
-        const date = e.target.dater.value;
-        const city = selectedCity;
-        const person_info = {
-            name, phone, email, date, city
-        };
-        console.log(person_info);
-    };
+    const { handleAddProgram, activeDay, setActiveDay, setSelectedCity } = useProgram();
 
     return (
         <div className='newProgram'>
@@ -34,7 +19,9 @@ const NewProgram = () => {
                     <AddPersonInfo setSelectedCity={setSelectedCity} />
                     <Statistics number_of_meals={0} total_calories={0} />
                 </div>
-
+                <div className='weekInfo'>
+                    <WeekTable setActiveDay={setActiveDay} activeDay={activeDay} />
+                </div>
             </form>
         </div>
     );
