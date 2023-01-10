@@ -9,6 +9,7 @@ import WeekTable from '../../components/new-program/week-table/week-table.compon
 
 const NewProgram = () => {
     const { handleAddProgram, activeDay, setActiveDay, setSelectedCity, client, dispatch } = useProgram();
+
     return (
         <div className='newProgram'>
             <h2 className='titleInNewProgram'>

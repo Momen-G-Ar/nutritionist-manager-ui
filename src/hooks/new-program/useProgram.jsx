@@ -32,20 +32,44 @@ const initialClient = {
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYDZDlzoFGce4_iaq0Nb2GVqqKI6qPO9R0Q&usqp=CAU',
             amount: 1,
             calories: 23.2
-        },{
+        }, {
             id: '123',
             name: 'rice',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYDZDlzoFGce4_iaq0Nb2GVqqKI6qPO9R0Q&usqp=CAU',
             amount: 2,
             calories: 23.2
-        },{
+        }, {
             id: '121223',
             name: 'bread',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThlTQqnOGgFVzZYLHcmDZlADaKNw_x1G5jsQ&usqp=CAU',
             amount: 3,
             calories: 223.2
         }]
-        , sunday: [], monday: [], tuesday: [], wednesday: [], thursday: [], friday: []
+        , sunday: [{
+            id: '123',
+            name: 'rice',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYDZDlzoFGce4_iaq0Nb2GVqqKI6qPO9R0Q&usqp=CAU',
+            amount: 34,
+            calories: 23.2
+        }, {
+            id: '121223',
+            name: 'bread',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThlTQqnOGgFVzZYLHcmDZlADaKNw_x1G5jsQ&usqp=CAU',
+            amount: 23,
+            calories: 223.2
+        }], monday: [{
+            id: '123',
+            name: 'rice',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYDZDlzoFGce4_iaq0Nb2GVqqKI6qPO9R0Q&usqp=CAU',
+            amount: 76,
+            calories: 267.2
+        }, {
+            id: '121223',
+            name: 'bread',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThlTQqnOGgFVzZYLHcmDZlADaKNw_x1G5jsQ&usqp=CAU',
+            amount: 3,
+            calories: 26723.2
+        }], tuesday: [], wednesday: [], thursday: [], friday: []
     }
 };
 
