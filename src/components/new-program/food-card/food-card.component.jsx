@@ -43,8 +43,8 @@ const FoodCard = (props) => {
             </span>
             <div className='infoHolder'>
                 <span>{props.food.name}</span>
+                <span>calories: {props.food.calories}Kcal</span>
                 <span>amount: {props.food.amount}</span>
-                <span>calories: {props.food.calories}</span>
                 <span className='trash'>
                     <Trash
                         size={22}

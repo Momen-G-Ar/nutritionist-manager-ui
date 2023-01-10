@@ -3,13 +3,15 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 65%;
-    height: 225px;
+    width: 85%;
+    min-height: 225px;
+    height: fit-content;
     border: 1px solid #00b96b;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-left: 32px;
     padding-top: 8px;
+    overflow: unset;
     padding-bottom: 8px;
 }
 

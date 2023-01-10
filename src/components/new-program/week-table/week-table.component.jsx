@@ -4,6 +4,7 @@ import React from 'react';
 
 import MultiDays from '../multi-days/multi-days.component';
 import FoodCard from './../food-card/food-card.component';
+import { Plus } from 'phosphor-react';
 
 /**
  * To render the whole week days 
@@ -61,7 +62,10 @@ const WeekTable = ({ activeDay, client, dispatch, setActiveDay }) => {
                                                 : null
                 }
                 <div className='clickToAddFood'>
-
+                    <Plus
+                        size={32}
+                        weight='regular'
+                    />
                 </div>
             </div>
         </div>
