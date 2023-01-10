@@ -7,9 +7,11 @@ import AddPersonInfo from './../../components/new-program/add-person-info/add-pe
 import Statistics from './../../components/new-program/statistics/statistics.component';
 import WeekTable from '../../components/new-program/week-table/week-table.component';
 
+
+
 const NewProgram = () => {
     const { handleAddProgram, activeDay, setActiveDay, setSelectedCity, client, dispatch } = useProgram();
-
+    console.log(client);
     return (
         <div className='newProgram'>
             <h2 className='titleInNewProgram'>

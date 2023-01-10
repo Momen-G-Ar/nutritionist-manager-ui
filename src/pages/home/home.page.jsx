@@ -26,10 +26,7 @@ const HomePage = () => {
             <div className='buttons'>
                 <Button
                     type='primary'
-                    onClick={() => {
-                        console.log(1);
-                        navigate('/new-program', { replace: true });
-                    }}
+                    onClick={() => { navigate('/new-program', { replace: true }); }}
                 >
                     new diet program
                 </Button>

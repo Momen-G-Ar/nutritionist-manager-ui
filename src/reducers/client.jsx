@@ -1,9 +1,10 @@
 /**
  * Reducer function updates the state of the client 
  * @param {{
+ *  ind:Number;
  *  type:String;
  *  day:String;
- *  food:{
+ *  food?:{
  *  id:String;
  *  name:String;
  *  image:String;
@@ -22,13 +23,13 @@
  *      city:String; 
  *  };
  *  days:{
- *      saturday:Array<>; 
- *      sunday:Array<>; 
- *      monday:Array<>; 
- *      tuesday:Array<>;
- *      wednesday:Array<>; 
- *      thursday:Array<>; 
- *      friday:Array<>;     
+ *      saturday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>;
+ *      sunday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>; 
+ *      monday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>; 
+ *      tuesday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>;
+ *      wednesday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>; 
+ *      thursday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>; 
+ *      friday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>;     
  *  };
  * }} client 
  */
@@ -43,7 +44,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.saturday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.saturday.filter((food, i) => i !== action.ind);
                     client.days.saturday = newDay;
                     return client;
                 }
@@ -60,7 +61,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.sunday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.sunday.filter((food, i) => i !== action.ind);
                     client.days.sunday = newDay;
                     return client;
                 }
@@ -77,7 +78,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.monday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.monday.filter((food, i) => i !== action.ind);
                     client.days.monday = newDay;
                     return client;
                 }
@@ -94,7 +95,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.tuesday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.tuesday.filter((food, i) => i !== action.ind);
                     client.days.tuesday = newDay;
                     return client;
                 }
@@ -112,7 +113,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.wednesday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.wednesday.filter((food, i) => i !== action.ind);
                     client.days.wednesday = newDay;
                     return client;
                 }
@@ -129,7 +130,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.thursday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.thursday.filter((food, i) => i !== action.ind);
                     client.days.thursday = newDay;
                     return client;
                 }
@@ -146,7 +147,7 @@ const reducer = (client, action) => {
                     return client;
                 }
                 case 'DELETE_FOOD': {
-                    const newDay = client.days.friday.filter(item => item.id !== action.food.id);
+                    const newDay = client.days.friday.filter((food, i) => i !== action.ind);
                     client.days.friday = newDay;
                     return client;
                 }

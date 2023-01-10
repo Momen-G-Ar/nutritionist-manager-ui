@@ -3,13 +3,22 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin-left: 32px;
     margin-top: 32px;
     width: 100%;
     height: 400px;
     position: relative;
     border: 1px solid #00b96b;
-    box-shadow: 1px 1px 5px 0px #00820e;
     border-radius: 5px;
     border-top-left-radius: 0;
+    padding: 8px;
+}
+
+.mainWeek .daysHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 100%;
 }

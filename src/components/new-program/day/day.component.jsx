@@ -15,11 +15,11 @@ import React from 'react';
  * @returns 
  */
 const Day = (props) => {
+    
     const handleActivateDate = () => {
         props.setActiveDay(props.day_name);
-        console.log('day => ', props.day_name);
-        console.log('active => ', props.active);
     };
+
     return (
         <span
             onClick={handleActivateDate}
