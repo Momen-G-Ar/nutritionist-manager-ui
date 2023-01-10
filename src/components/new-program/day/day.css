@@ -30,14 +30,16 @@
     position: absolute;
     user-select: none;
     text-transform: capitalize;
-    color: #212529;
     border-color: #00b96b;
+    color: #00b96b;
+    font-weight: 600;
     outline: 0;
     border-bottom: 2px solid #fff;
 }
 
 .day:active {
-    color: #212529;
+    font-weight: 600;
+    color: #00b96b;
     border-color: #00b96b;
     outline: 0;
     border-bottom: 1px solid #fff;

@@ -42,13 +42,13 @@ const FoodCard = (props) => {
                 <Image src={props.food.image} />
             </span>
             <div className='infoHolder'>
-                <span>{props.food.name}</span>
+                <span style={{ fontSize: 20 }}>{props.food.name}</span>
                 <span>calories: {props.food.calories}Kcal</span>
                 <span>amount: {props.food.amount}</span>
                 <span className='trash'>
                     <Trash
                         size={22}
-                        color="#046c41"
+                        color="#089f17"
                         weight='regular'
                         style={{ cursor: 'pointer', marginRight: '5px', marginBottom: '5px' }}
                         onClick={handleDeleteFood}

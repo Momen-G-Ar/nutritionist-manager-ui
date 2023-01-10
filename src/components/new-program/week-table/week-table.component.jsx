@@ -52,13 +52,13 @@ const WeekTable = ({ activeDay, client, dispatch, setActiveDay }) => {
             />
             <div className='daysHolder'>
                 {
-                    (activeDay === 'saturday') ? client.days.saturday.map((food, i) => < FoodCard key={i + ' ' + food + ' saturday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                    (activeDay === 'saturday') ? client.days.saturday.map((food, i) => <FoodCard key={i + ' ' + food + ' saturday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
                         : (activeDay === 'sunday') ? client.days.sunday.map((food, i) => <FoodCard key={i + ' ' + food + ' sunday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
-                            : (activeDay === 'monday') ? client.days.monday.map((food, i) => < FoodCard key={i + ' ' + food + ' monday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
-                                : (activeDay === 'tuesday') ? client.days.tuesday.map((food, i) => < FoodCard key={i + ' ' + food + ' tuesday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
-                                    : (activeDay === 'wednesday') ? client.days.wednesday.map((food, i) => < FoodCard key={i + ' ' + food + ' wednesday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
-                                        : (activeDay === 'thursday') ? client.days.thursday.map((food, i) => < FoodCard key={i + ' ' + food + ' thursday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
-                                            : (activeDay === 'friday') ? client.days.friday.map((food, i) => < FoodCard key={i + ' ' + food + ' friday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                            : (activeDay === 'monday') ? client.days.monday.map((food, i) => <FoodCard key={i + ' ' + food + ' monday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                                : (activeDay === 'tuesday') ? client.days.tuesday.map((food, i) => <FoodCard key={i + ' ' + food + ' tuesday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                                    : (activeDay === 'wednesday') ? client.days.wednesday.map((food, i) => <FoodCard key={i + ' ' + food + ' wednesday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                                        : (activeDay === 'thursday') ? client.days.thursday.map((food, i) => <FoodCard key={i + ' ' + food + ' thursday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
+                                            : (activeDay === 'friday') ? client.days.friday.map((food, i) => <FoodCard key={i + ' ' + food + ' friday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
                                                 : null
                 }
                 <div className='clickToAddFood'>
