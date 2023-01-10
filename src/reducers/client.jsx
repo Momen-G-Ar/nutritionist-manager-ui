@@ -1,5 +1,5 @@
 /**
- * Reducer function updates the state of the client 
+ * Reducer function updates the state of the client's days
  * @param {{
  *  ind:Number;
  *  type:String;
