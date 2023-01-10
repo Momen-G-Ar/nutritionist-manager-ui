@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'react';
+import { useState, useReducer, useMemo } from 'react';
 import { reducer } from '../../reducers/client';
 
 /**
@@ -75,8 +75,54 @@ const initialClient = {
 
 const useProgram = () => {
     const [selectedCity, setSelectedCity] = useState('Hebron');
+    const [meals, setMeals] = useState(0);
+    const [calories, setCalories] = useState(0);
     const [activeDay, setActiveDay] = useState('saturday');
     const [client, dispatch] = useReducer(reducer, initialClient);
+
+    useMemo(() => {
+        switch (activeDay) {
+            case 'saturday': {
+                setMeals(client.days.saturday.length);
+                setCalories(client.days.saturday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'sunday': {
+                setMeals(client.days.sunday.length);
+                setCalories(client.days.sunday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'monday': {
+                setMeals(client.days.monday.length);
+                setCalories(client.days.monday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'tuesday': {
+                setMeals(client.days.tuesday.length);
+                setCalories(client.days.tuesday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'wednesday': {
+                setMeals(client.days.wednesday.length);
+                setCalories(client.days.wednesday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'thursday': {
+                setMeals(client.days.thursday.length);
+                setCalories(client.days.thursday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+            case 'friday': {
+                setMeals(client.days.friday.length);
+                setCalories(client.days.friday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
+                break;
+            }
+
+
+            default:
+                break;
+        }
+    }, [client, activeDay]);
 
     /**
     * Handler function for the form onSubmit event.
@@ -105,6 +151,8 @@ const useProgram = () => {
 
 
     return {
+        meals,
+        calories,
         activeDay,
         client,
         dispatch,

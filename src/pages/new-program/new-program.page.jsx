@@ -8,7 +8,11 @@ import Statistics from './../../components/new-program/statistics/statistics.com
 import WeekTable from '../../components/new-program/week-table/week-table.component';
 
 const NewProgram = () => {
-    const { handleAddProgram, activeDay, setActiveDay, setSelectedCity, client, dispatch } = useProgram();
+    const
+        {
+            calories, meals, activeDay, client,
+            setActiveDay, setSelectedCity, handleAddProgram, dispatch
+        } = useProgram();
 
     return (
         <div className='newProgram'>
@@ -18,7 +22,7 @@ const NewProgram = () => {
             <form onSubmit={handleAddProgram}>
                 <div className='personInfoAndStat'>
                     <AddPersonInfo setSelectedCity={setSelectedCity} />
-                    <Statistics number_of_meals={0} total_calories={0} />
+                    <Statistics number_of_meals={meals} total_calories={calories} />
                 </div>
                 <div className='weekInfo'>
                     <WeekTable
