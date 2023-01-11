@@ -39,11 +39,12 @@ import { Plus } from 'phosphor-react';
  *       amount: number;
  *       calories: number;
  *   };
- *  }>
+ *  }>;
+ *  setAddCard: React.Dispatch<React.SetStateAction<boolean>>
  * }} props 
  * @returns 
  */
-const WeekTable = ({ activeDay, client, dispatch, setActiveDay }) => {
+const WeekTable = ({ activeDay, client, dispatch, setActiveDay, setAddCard }) => {
     return (
         <div className='mainWeek'>
             <MultiDays
@@ -61,7 +62,7 @@ const WeekTable = ({ activeDay, client, dispatch, setActiveDay }) => {
                                             : (activeDay === 'friday') ? client.days.friday.map((food, i) => <FoodCard key={i + ' ' + food + ' friday'} food={food} dispatch={dispatch} day={activeDay} ind={i} />)
                                                 : null
                 }
-                <div className='clickToAddFood'>
+                <div className='clickToAddFood' onClick={() => setAddCard(true)}>
                     <Plus
                         size={32}
                         weight='regular'

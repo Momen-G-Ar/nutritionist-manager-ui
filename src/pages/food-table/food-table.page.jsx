@@ -64,6 +64,7 @@ const FoodTable = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

@@ -8,7 +8,7 @@ import { Trash } from 'phosphor-react';
  * To render each food alone in the specific day
  * @param {{
  * ind:Number;
- * day:String;
+ * day?:String;
  * food: {
  *  id: string;
  *  name: string;
@@ -16,7 +16,7 @@ import { Trash } from 'phosphor-react';
  *  amount: number;
  *  calories: number;
  * };
- * dispatch:React.Dispatch<{
+ * dispatch?:React.Dispatch<{
  *   type: string;
  *   day: string;
  *   food: {
@@ -45,15 +45,19 @@ const FoodCard = (props) => {
                 <span style={{ fontSize: 20 }}>{props.food.name}</span>
                 <span>calories: {props.food.calories}Kcal</span>
                 <span>amount: {props.food.amount}(G\Ml)</span>
-                <span className='trash'>
-                    <Trash
-                        size={22}
-                        color="#089f17"
-                        weight='regular'
-                        style={{ cursor: 'pointer', marginRight: '5px', marginBottom: '5px' }}
-                        onClick={handleDeleteFood}
-                    />
-                </span>
+                {
+                    props.dispatch
+                        ? <span className='trash'>
+                            <Trash
+                                size={22}
+                                color="#089f17"
+                                weight='regular'
+                                style={{ cursor: 'pointer', marginRight: '5px', marginBottom: '5px' }}
+                                onClick={handleDeleteFood}
+                            />
+                        </span>
+                        : null
+                }
             </div>
         </div>
     );

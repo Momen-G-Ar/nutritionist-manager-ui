@@ -1,0 +1,63 @@
+.wrapperInAddCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.wrapperInAddCard .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.9;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+.wrapperInAddCard .addCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+    width: 350px;
+    background-color: #fff;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 5px;
+    border: 1px solid #00b96b;
+    position: absolute;
+    top: 300;
+}
+
+.wrapperInAddCard .addCard .select {
+    display: flex;
+    width: 320px;
+    margin-top: 32px;
+}
+
+.wrapperInAddCard .addCard .foodCardInAddCard {
+    display: flex;
+    width: 100%;
+    height: 320px;
+    margin: 0;
+    margin-top: 50px;
+    justify-content: center;
+
+}
+
+.wrapperInAddCard .addCard .saveAndCancelInAddCard {
+    display: flex;
+    justify-content: space-around;
+    height: max-content;
+    width: 100%;
+    position: absolute;
+    bottom: 32px;
+}   

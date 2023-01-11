@@ -79,6 +79,7 @@ const useProgram = () => {
     const [calories, setCalories] = useState(0);
     const [activeDay, setActiveDay] = useState('saturday');
     const [client, dispatch] = useReducer(reducer, initialClient);
+    const [addCard, setAddCard] = useState(false);
 
     useMemo(() => {
         switch (activeDay) {
@@ -151,6 +152,8 @@ const useProgram = () => {
 
 
     return {
+        addCard,
+        setAddCard,
         meals,
         calories,
         activeDay,
