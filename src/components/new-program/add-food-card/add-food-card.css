@@ -48,7 +48,7 @@
     width: 100%;
     height: 320px;
     margin: 0;
-    margin-top: 50px;
+    margin-top: 40px;
     justify-content: center;
 
 }
@@ -60,4 +60,16 @@
     width: 100%;
     position: absolute;
     bottom: 32px;
-}   
+}
+
+.wrapperInAddCard .addCard .foodCardInAddCard .foodCard {
+    width: 300px;
+}
+
+.wrapperInAddCard .addCard .foodCardInAddCard .foodCard .infoHolder {
+    margin-left: 15px;
+}
+
+.wrapperInAddCard .addCard .foodCardInAddCard .foodCard img {
+    width: 155px;
+}

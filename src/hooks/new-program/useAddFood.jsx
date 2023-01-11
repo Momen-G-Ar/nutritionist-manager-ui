@@ -44,12 +44,11 @@ const useAddFood = () => {
     }, [foodTable]);
 
     return {
-        setSelected,
         table,
-        handleSelectChange,
-        selected,
-        handleAddFood,
         foodTable,
+        selected,
+        handleSelectChange,
+        handleAddFood,
     };
 };
 

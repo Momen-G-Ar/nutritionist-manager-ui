@@ -19,7 +19,7 @@ import useAddFood from '../../../hooks/new-program/useAddFood';
  * @returns 
  */
 const AddFoodCard = (props) => {
-    const { table, selected, handleSelectChange, handleAddFood, foodTable, setSelected } = useAddFood();
+    const { table, selected, handleSelectChange, handleAddFood, foodTable } = useAddFood();
 
     const handleCancel = () => {
         props.setAddCard(false);
