@@ -44,52 +44,20 @@ const useProgram = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) {
+        if (!user)
             navigate('/login', { replace: true });
-        }
     }, [user, navigate]);
 
-    useMemo(() => {
-        switch (activeDay) {
-            case 'saturday': {
-                setMeals(client.days.saturday.length);
-                setCalories(client.days.saturday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'sunday': {
-                setMeals(client.days.sunday.length);
-                setCalories(client.days.sunday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'monday': {
-                setMeals(client.days.monday.length);
-                setCalories(client.days.monday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'tuesday': {
-                setMeals(client.days.tuesday.length);
-                setCalories(client.days.tuesday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'wednesday': {
-                setMeals(client.days.wednesday.length);
-                setCalories(client.days.wednesday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'thursday': {
-                setMeals(client.days.thursday.length);
-                setCalories(client.days.thursday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            case 'friday': {
-                setMeals(client.days.friday.length);
-                setCalories(client.days.friday.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2));
-                break;
-            }
-            default:
-                break;
-        }
-    }, [client, activeDay]);
+    /**
+     * To change the statistics on each change
+     * @param {Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>} day 
+     */
+    const handleAddFood = (day) => {
+        const len = day.length;
+        const cals = day.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2);
+        setMeals(len);
+        setCalories(cals);
+    };
 
     /**
     * Handler function for the form onSubmit event.
@@ -112,9 +80,44 @@ const useProgram = () => {
         dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
     };
 
+    useMemo(() => {
+        switch (activeDay) {
+            case 'saturday': {
+                handleAddFood(client.days.saturday);
+                break;
+            }
+            case 'sunday': {
+                handleAddFood(client.days.sunday);
+                break;
+            }
+            case 'monday': {
+                handleAddFood(client.days.monday);
+                break;
+            }
+            case 'tuesday': {
+                handleAddFood(client.days.tuesday);
+                break;
+            }
+            case 'wednesday': {
+                handleAddFood(client.days.wednesday);
+                break;
+            }
+            case 'thursday': {
+                handleAddFood(client.days.thursday);
+                break;
+            }
+            case 'friday': {
+                handleAddFood(client.days.friday);
+                break;
+            }
+            default:
+                break;
+        }
+        // eslint-disable-next-line
+    }, [client, activeDay]);
 
     return {
-        addCard, meals, calories, activeDay, client,
+        addCard, meals, calories, activeDay, client, setMeals, setCalories,
         setAddCard, dispatch, handleAddProgram, setSelectedCity, setActiveDay,
     };
 };

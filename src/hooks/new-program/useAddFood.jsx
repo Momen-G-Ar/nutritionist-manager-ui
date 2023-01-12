@@ -49,6 +49,7 @@ const useAddFood = () => {
     useMemo(() => {
         const newTab = getTable();
         setTable(newTab);
+        // eslint-disable-next-line
     }, [foodTable]);
 
     return {

@@ -1,18 +1,18 @@
 import './statistics.css';
 
 import React from 'react';
-import { Button } from 'antd';
 
+import { Button } from 'antd';
 
 /**
  * To display the statistics of the current day Cals and Meals and save the new person
  * @param {{
- *  total_calories:Number;
- *  number_of_meals:Number;
+ *  meals:Number;
+ *  calories:Number;
  * }} props 
  * @returns 
  */
-const Statistics = (props) => {
+const Statistics = ({ meals, calories }) => {
     //TODO: make the statistics change in each add in the food cards
     return (
         <div className='statistics'>
@@ -21,10 +21,10 @@ const Statistics = (props) => {
             </h3>
             <div className='state'>
                 <span>
-                    {"Total Calories(day): " + props.total_calories + " Kcal"}
+                    {"Total Calories(day): " + calories + " Kcal"}
                 </span>
                 <span>
-                    {"Number of Meals: " + props.number_of_meals}
+                    {"Number of Meals: " + meals}
                 </span>
             </div>
             <div className='saveButton'>

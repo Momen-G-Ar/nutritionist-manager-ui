@@ -66,6 +66,10 @@
     width: 300px;
 }
 
+.wrapperInAddCard .addCard .foodCardInAddCard .foodCard .customImage>div>div {
+    width: 155px;
+}
+
 .wrapperInAddCard .addCard .foodCardInAddCard .foodCard .infoHolder {
     margin-left: 15px;
 }

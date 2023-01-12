@@ -17,6 +17,11 @@
     height: 120px;
 }
 
+.foodCard .customImage>div {
+    width: 140px;
+    height: 120px;
+}
+
 .foodCard .customImage img {
     display: flex;
     justify-content: center;
