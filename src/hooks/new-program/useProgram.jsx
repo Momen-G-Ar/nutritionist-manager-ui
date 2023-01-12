@@ -1,5 +1,6 @@
-import { useState, useReducer, useMemo } from 'react';
+import { useState, useReducer, useMemo, useContext } from 'react';
 import { reducer } from '../../reducers/client';
+import { UserContext } from './../../components/providers/user-provider.component';
 
 /**
 * Give a type for the client object
@@ -38,6 +39,7 @@ const useProgram = () => {
     const [activeDay, setActiveDay] = useState('saturday');
     const [client, dispatch] = useReducer(reducer, initialClient);
     const [addCard, setAddCard] = useState(false);
+    const { user, setUser } = useContext(UserContext);
 
     useMemo(() => {
         switch (activeDay) {
@@ -94,16 +96,12 @@ const useProgram = () => {
         const city = selectedCity;
 
         const id = name + ' ' + new Date().toLocaleDateString() + ' ' + date;
-        const info = {
-            name, phone, email, date, city
-        };
-        // TODO: 
-        const days = {
-            saturday: [], sunday: [], monday: [], tuesday: [],
-            wednesday: [], thursday: [], friday: [],
-        };
-        const client = { id, info, days };
-        console.log(client);
+        const info = { name, phone, email, date, city };
+
+        let newUser = { ...user };
+        newUser.ids.push(id);
+        setUser(newUser);
+        dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
     };
 
 

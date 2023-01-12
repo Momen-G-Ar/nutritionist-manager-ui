@@ -10,7 +10,15 @@
  *  image:String;
  *  amount:Number;
  *  calories:Number;
- * }
+ * };
+ *  id?:String;
+ *  info?:{
+ *      name:String;
+ *      phone:Number;
+ *      email:String;
+ *      date:String;
+ *      city:String; 
+ *  };
  * }} action 
  * 
  * @param {{
@@ -34,6 +42,17 @@
  * }} client 
  */
 const reducer = (client, action) => {
+
+    if (action.type === 'SAVE_CLIENT') {
+        let finalClient = { ...client };
+        finalClient.id = action.id;
+        finalClient.info = action.info;
+        let clientsInLocalStorage = JSON.parse(localStorage.getItem('clients')) || [];
+        clientsInLocalStorage.push(finalClient);
+        localStorage.setItem('clients', JSON.stringify(clientsInLocalStorage));
+        return finalClient;
+    }
+
     switch (action.day) {
 
         case 'saturday': {
@@ -58,7 +77,7 @@ const reducer = (client, action) => {
         case 'sunday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.sunday.push(action.food);
                     return newClient;
                 }
@@ -77,7 +96,7 @@ const reducer = (client, action) => {
         case 'monday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.monday.push(action.food);
                     return newClient;
                 }
@@ -96,7 +115,7 @@ const reducer = (client, action) => {
         case 'tuesday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.tuesday.push(action.food);
                     return newClient;
                 }
@@ -116,7 +135,7 @@ const reducer = (client, action) => {
 
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.wednesday.push(action.food);
                     return newClient;
                 }
@@ -135,7 +154,7 @@ const reducer = (client, action) => {
         case 'thursday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.thursday.push(action.food);
                     return newClient;
                 }
@@ -154,7 +173,7 @@ const reducer = (client, action) => {
         case 'friday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    let newClient = client;
+                    let newClient = { ...client };
                     newClient.days.friday.push(action.food);
                     return newClient;
                 }
