@@ -13,12 +13,26 @@ const UserProvider = (props) => {
     const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')) || null);
 
     const deleteUser = () => {
+        let usersFromLocalStorage = JSON.parse(localStorage.getItem('users')) || [];
+        for (let i = 0; i < usersFromLocalStorage.length; i++) {
+            if (usersFromLocalStorage[i].user_name === user.user_name) {
+                usersFromLocalStorage[i] = user;
+            }
+        }
+        console.log(usersFromLocalStorage);
+        localStorage.setItem('users', JSON.stringify(usersFromLocalStorage));
+
         setUser(null);
         sessionStorage.removeItem('user');
     };
 
+    const editUser = (newUser) => {
+        setUser(newUser);
+        sessionStorage.setItem('user', JSON.stringify(newUser));
+    };
+
     return (
-        <UserContext.Provider value={{ user, setUser, deleteUser }}>
+        <UserContext.Provider value={{ user, setUser, deleteUser, editUser }}>
             {props.children}
         </UserContext.Provider>
     );

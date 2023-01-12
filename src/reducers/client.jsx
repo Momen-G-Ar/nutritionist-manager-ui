@@ -1,9 +1,9 @@
 /**
  * Reducer function updates the state of the client's days
  * @param {{
- *  ind:Number;
  *  type:String;
- *  day:String;
+ *  ind?:Number;
+ *  day?:String;
  *  food?:{
  *  id:String;
  *  name:String;
@@ -47,10 +47,23 @@ const reducer = (client, action) => {
         let finalClient = { ...client };
         finalClient.id = action.id;
         finalClient.info = action.info;
+
         let clientsInLocalStorage = JSON.parse(localStorage.getItem('clients')) || [];
         clientsInLocalStorage.push(finalClient);
         localStorage.setItem('clients', JSON.stringify(clientsInLocalStorage));
-        return finalClient;
+
+        let initialClient = {
+            ...client,
+            id: '', info: { name: '', phone: 0, email: '', date: '', city: '' },
+        };
+        initialClient.days.saturday = [];
+        initialClient.days.sunday = [];
+        initialClient.days.monday = [];
+        initialClient.days.tuesday = [];
+        initialClient.days.wednesday = [];
+        initialClient.days.thursday = [];
+        initialClient.days.friday = [];
+        return initialClient;
     }
 
     switch (action.day) {

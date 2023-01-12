@@ -31,7 +31,6 @@ import { Trash } from 'phosphor-react';
  * @returns 
  */
 const FoodCard = (props) => {
-
     const handleDeleteFood = () => {
         props.dispatch({ ind: props.ind, type: 'DELETE_FOOD', day: props.day });
     };

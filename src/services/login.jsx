@@ -19,7 +19,7 @@ const handleLogin = (user_name, password) => {
  * }} user 
  */
 const setSessionStorage = (user) => {
-    sessionStorage.setItem('user', JSON.stringify(user.user_name));
+    sessionStorage.setItem('user', JSON.stringify(user));
 };
 
 export { handleLogin, setSessionStorage };

@@ -13,6 +13,7 @@ import { Button } from 'antd';
  * @returns 
  */
 const Statistics = (props) => {
+    //TODO: make the statistics change in each add in the food cards
     return (
         <div className='statistics'>
             <h3>
