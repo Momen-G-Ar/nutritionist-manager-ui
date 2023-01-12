@@ -42,7 +42,13 @@ const AddFoodCard = (props) => {
                         : null
                 }
                 <div className='saveAndCancelInAddCard'>
-                    <Button type='primary' onClick={handleAddFood}>Save</Button>
+                    <Button type='primary' onClick={() => {
+                        handleAddFood(props.activeDay);
+                        props.setAddCard(false);
+                    }}
+                    >
+                        Save
+                    </Button>
                     <Button type='primary' onClick={handleCancel}>Cancel</Button>
                 </div>
 

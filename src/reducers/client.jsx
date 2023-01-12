@@ -34,14 +34,14 @@
  * }} client 
  */
 const reducer = (client, action) => {
-
     switch (action.day) {
 
         case 'saturday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.saturday.push(action.food);
-                    return client;
+                    let newClient = { ...client };
+                    newClient.days.saturday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.saturday.filter((food, i) => i !== action.ind);
@@ -58,8 +58,9 @@ const reducer = (client, action) => {
         case 'sunday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.sunday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.sunday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.sunday.filter((food, i) => i !== action.ind);
@@ -76,8 +77,9 @@ const reducer = (client, action) => {
         case 'monday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.monday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.monday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.monday.filter((food, i) => i !== action.ind);
@@ -94,8 +96,9 @@ const reducer = (client, action) => {
         case 'tuesday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.tuesday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.tuesday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.tuesday.filter((food, i) => i !== action.ind);
@@ -113,8 +116,9 @@ const reducer = (client, action) => {
 
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.wednesday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.wednesday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.wednesday.filter((food, i) => i !== action.ind);
@@ -131,8 +135,9 @@ const reducer = (client, action) => {
         case 'thursday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.thursday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.thursday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.thursday.filter((food, i) => i !== action.ind);
@@ -149,8 +154,9 @@ const reducer = (client, action) => {
         case 'friday': {
             switch (action.type) {
                 case 'ADD_FOOD': {
-                    client.days.friday.push(action.food);
-                    return client;
+                    let newClient = client;
+                    newClient.days.friday.push(action.food);
+                    return newClient;
                 }
                 case 'DELETE_FOOD': {
                     const newDay = client.days.friday.filter((food, i) => i !== action.ind);
@@ -167,8 +173,6 @@ const reducer = (client, action) => {
         default:
             return client;
     }
-
-
 };
 
 export { reducer };
