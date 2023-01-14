@@ -64,6 +64,20 @@ const reducer = (client, action) => {
         initialClient.days.thursday = [];
         initialClient.days.friday = [];
         return initialClient;
+    } else if (action.type === 'DELETE_CLIENT') {
+        //TODO: must delete it in local and session storage
+        let initialClient = {
+            ...client,
+            id: '', info: { name: '', phone: 0, email: '', date: '', city: '' },
+        };
+        initialClient.days.saturday = [];
+        initialClient.days.sunday = [];
+        initialClient.days.monday = [];
+        initialClient.days.tuesday = [];
+        initialClient.days.wednesday = [];
+        initialClient.days.thursday = [];
+        initialClient.days.friday = [];
+        return initialClient;
     }
 
     switch (action.day) {

@@ -76,6 +76,7 @@ const useProgram = () => {
 
         let newUser = { ...user };
         newUser.ids.push(id);
+        
         editUser(newUser);
         dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
     };
