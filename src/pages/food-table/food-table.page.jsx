@@ -8,7 +8,7 @@ import { UserContext } from './../../components/providers/user-provider.componen
 import AddFoodForm from '../../components/food-table/add-food-form/add-food-form.component';
 import FoodItem from './../../components/food-table/food-item/food-holder.component';
 import { Button } from 'antd';
-import emptyList from '../../asserts/empty-box-100.png';
+import emptyList from '../../assets/empty-box-100.png';
 
 const FoodTable = () => {
     const { addNew, foodTable, addFoodItem, deleteFoodItem, editFoodItem, showAddNew, hideAddNew } = useFood();

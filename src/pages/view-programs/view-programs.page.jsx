@@ -4,8 +4,7 @@ import React, { useContext } from 'react';
 
 import Input from './../../components/common/input/input';
 import { UserContext } from './../../components/providers/user-provider.component';
-import emptyList from '../../asserts/empty-box-100.png';
-import { useSearchParams } from 'react-router-dom';
+import emptyList from '../../assets/empty-box-100.png';
 import useParams from '../../hooks/params.hook';
 
 const ViewPrograms = () => {
