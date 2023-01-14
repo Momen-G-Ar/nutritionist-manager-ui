@@ -1,4 +1,4 @@
-import { useState, useReducer, useMemo, useContext, useEffect } from 'react';
+import { useState, useReducer, useContext, useEffect } from 'react';
 import { reducer } from '../../reducers/client';
 import { UserContext } from './../../components/providers/user-provider.component';
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +23,15 @@ import { useNavigate } from 'react-router-dom';
 *      thursday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>; 
 *      friday:Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>;     
 *  };
+*  status:{
+*       saturday:{meals:Number; calories:Number;};
+*       sunday:{meals:Number; calories:Number;}; 
+*       monday:{meals:Number; calories:Number;}; 
+*       tuesday:{meals:Number; calories:Number;};
+*       wednesday:{meals:Number; calories:Number;}; 
+*       thursday:{meals:Number; calories:Number;}; 
+*       friday:{meals:Number; calories:Number;};
+*  };
 * }}
 */
 const initialClient = {
@@ -30,13 +39,17 @@ const initialClient = {
     days: {
         saturday: [], sunday: [], monday: [], tuesday: [],
         wednesday: [], thursday: [], friday: []
+    },
+    status: {
+        saturday: { meals: 0, calories: 0 }, sunday: { meals: 0, calories: 0 },
+        monday: { meals: 0, calories: 0 }, tuesday: { meals: 0, calories: 0 },
+        wednesday: { meals: 0, calories: 0 }, thursday: { meals: 0, calories: 0 },
+        friday: { meals: 0, calories: 0 }
     }
 };
 
 const useProgram = () => {
     const [selectedCity, setSelectedCity] = useState('Hebron');
-    const [meals, setMeals] = useState(0);
-    const [calories, setCalories] = useState(0);
     const [activeDay, setActiveDay] = useState('saturday');
     const [client, dispatch] = useReducer(reducer, initialClient);
     const [addCard, setAddCard] = useState(false);
@@ -49,18 +62,7 @@ const useProgram = () => {
     }, [user, navigate]);
 
     /**
-     * To change the statistics on each change
-     * @param {Array<{id:String;name:String;image:String;amount:Number;calories:Number;}>} day 
-     */
-    const handleAddFood = (day) => {
-        const len = day.length;
-        const cals = day.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2);
-        setMeals(len);
-        setCalories(cals);
-    };
-
-    /**
-    * Handler function for the form onSubmit event.
+     * Handler function for the form onSubmit event.
     * @param {React.FormEvent<HTMLFormElement>} e Event object.
     */
     const handleAddProgram = (e) => {
@@ -76,49 +78,15 @@ const useProgram = () => {
 
         let newUser = { ...user };
         newUser.ids.push(id);
-        
+
         editUser(newUser);
         dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
     };
 
-    useMemo(() => {
-        switch (activeDay) {
-            case 'saturday': {
-                handleAddFood(client.days.saturday);
-                break;
-            }
-            case 'sunday': {
-                handleAddFood(client.days.sunday);
-                break;
-            }
-            case 'monday': {
-                handleAddFood(client.days.monday);
-                break;
-            }
-            case 'tuesday': {
-                handleAddFood(client.days.tuesday);
-                break;
-            }
-            case 'wednesday': {
-                handleAddFood(client.days.wednesday);
-                break;
-            }
-            case 'thursday': {
-                handleAddFood(client.days.thursday);
-                break;
-            }
-            case 'friday': {
-                handleAddFood(client.days.friday);
-                break;
-            }
-            default:
-                break;
-        }
-        // eslint-disable-next-line
-    }, [client, activeDay]);
+
 
     return {
-        addCard, meals, calories, activeDay, client, setMeals, setCalories,
+        addCard, activeDay, client,
         setAddCard, dispatch, handleAddProgram, setSelectedCity, setActiveDay,
     };
 };

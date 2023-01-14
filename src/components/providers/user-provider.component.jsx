@@ -27,8 +27,6 @@ const UserProvider = (props) => {
                 usersFromLocalStorage[i] = user;
             }
         }
-        
-        console.log(usersFromLocalStorage);
         localStorage.setItem('users', JSON.stringify(usersFromLocalStorage));
     };
 

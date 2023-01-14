@@ -9,12 +9,9 @@ import WeekTable from '../../components/new-program/week-table/week-table.compon
 import AddFoodCard from '../../components/new-program/add-food-card/add-food-card';
 
 const NewProgram = () => {
-    const { calories, meals, activeDay, client, addCard,
+    const { activeDay, client, addCard,
         setActiveDay, setSelectedCity, handleAddProgram, dispatch, setAddCard } = useProgram();
 
-    console.log(client);
-    console.log(meals);
-    
     return (
         <div className='newProgram'>
             <AddFoodCard setAddCard={setAddCard} style={{ display: addCard ? 'flex' : 'none' }} activeDay={activeDay} />
@@ -24,7 +21,7 @@ const NewProgram = () => {
             <form onSubmit={handleAddProgram}>
                 <div className='personInfoAndStat'>
                     <AddPersonInfo setSelectedCity={setSelectedCity} />
-                    <Statistics calories={calories} meals={meals} />
+                    <Statistics activeDay={activeDay} client={client} />
                 </div>
                 <div className='weekInfo'>
                     <WeekTable
