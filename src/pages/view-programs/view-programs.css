@@ -1,0 +1,68 @@
+.viewPrograms {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.viewPrograms .titleInViewPrograms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 35px;
+    text-transform: capitalize;
+    font-size: 27px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b96b;
+    font-weight: 700;
+}
+
+.viewPrograms .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 32px;
+    margin-top: 5px;
+}
+
+.viewPrograms .search .inputGroup {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.viewPrograms .clientsInViewPrograms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border: 1px solid #00b96b;
+    border-radius: 5px;
+    min-height: 650px;
+    padding: 2px;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.viewPrograms .clientsInViewPrograms .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b96b;
+    font-weight: 700;
+    user-select: none;
+}

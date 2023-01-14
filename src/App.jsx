@@ -9,6 +9,7 @@ import Header from './components/core/header/header';
 import UserProvider from './components/providers/user-provider.component';
 import FoodTable from './pages/food-table/food-table.page';
 import { ConfigProvider } from 'antd';
+import ViewPrograms from './pages/view-programs/view-programs.page';
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
                             <Route path='/home-page' element={<HomePage />} />
                             <Route path='/manage-food-table' element={<FoodTable />} />
                             <Route path='/new-program' element={<NewProgram />} />
+                            <Route path='/view-programs' element={<ViewPrograms />} />
                         </Routes>
                     </BrowserRouter>
                 </UserProvider>
