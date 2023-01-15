@@ -11,6 +11,7 @@ const Header = () => {
 
     const handleSingOut = () => {
         user.deleteUser();
+        navigate('/login', { replace: true });
     };
 
     return (

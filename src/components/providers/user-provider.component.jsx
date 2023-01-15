@@ -16,7 +16,7 @@ const UserProvider = (props) => {
         setUser(null);
         sessionStorage.removeItem('user');
     };
-
+    
     const editUser = (newUser) => {
         setUser(newUser);
         sessionStorage.setItem('user', JSON.stringify(newUser));
