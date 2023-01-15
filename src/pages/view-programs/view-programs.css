@@ -37,18 +37,31 @@
     font-size: 12px;
 }
 
+.viewPrograms .search .inputGroup>label {
+    color: #00b96b;
+    opacity: 0.85;
+}
+
 .viewPrograms .clientsInViewPrograms {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 95%;
     border: 1px solid #00b96b;
     border-radius: 5px;
-    min-height: 650px;
-    padding: 2px;
+    min-height: 620px;
+    padding: 15px;
     margin-top: 32px;
     margin-left: 32px;
+    row-gap: 20px;
+    column-gap: 20px;
 }
+
+.viewPrograms .clientsInViewPrograms.empty {
+    justify-content: center;
+    align-items: center;
+}
+
 
 .viewPrograms .clientsInViewPrograms .empty {
     display: flex;

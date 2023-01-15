@@ -1,0 +1,58 @@
+.programCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #00b96b;
+    height: 100px;
+    width: 250px;
+    padding-top: 20px;
+    border-radius: 5px;
+
+}
+
+.programCard .titleInCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b96b;
+    font-weight: 700;
+    margin: 0;
+}
+
+.programCard .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.programCard .buttons .pdf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.programCard .buttons .delete {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.programCard .buttons .delete .iconInButton {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.programCard .buttons .pdf .iconInButton {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+}

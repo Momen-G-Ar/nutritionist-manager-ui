@@ -1,23 +1,25 @@
 /**
  * Reducer function updates the state of the client's days
- * to use these types in the despatcher you must send parameters as following 
- * To ADD_FOOD: type, food, day
- * To DELETE_FOOD: type, ind, day
- * To SAVE_CLIENT: type, info, id
- * To DELETE_CLIENT: type, id, user
+ * To use these types in the dispatcher you must send parameters as following:
+ * ADD_FOOD: type, food, day
+ * DELETE_FOOD: type, ind, day
+ * SAVE_CLIENT: type, info, id
+ * DELETE_CLIENT: type, id, user, setUser
  * 
  * @param {{
  *  type:String;
  *  ind?:Number;
  *  day?:String;
- *  food?:{
- *  id:String;
- *  name:String;
- *  image:String;
- *  amount:Number;
- *  calories:Number;
- * };
  *  id?:String;
+ *  user?:String;
+ *  setUser:React.Dispatch<any>;
+ *  food?:{
+ *   id:String;
+ *   name:String;
+ *   image:String;
+ *   amount:Number;
+ *   calories:Number;
+ *  };
  *  info?:{
  *      name:String;
  *      phone:Number;
@@ -97,6 +99,11 @@ const reducer = (client, action) => {
 
         return initialClient;
     } else if (action.type === 'DELETE_CLIENT') {
+        // delete in user in session storage
+        let new_user_in_session_storage = JSON.parse(sessionStorage.getItem('user'));
+        new_user_in_session_storage.ids = new_user_in_session_storage.ids.filter(id => id !== action.id);
+        sessionStorage.setItem('user', JSON.stringify(new_user_in_session_storage));
+
         // delete in client in local storage
         let new_clients_in_local_storage = JSON.parse(localStorage.getItem('clients')) || [];
         new_clients_in_local_storage = new_clients_in_local_storage.filter((client) => client.id !== action.id);
@@ -106,15 +113,10 @@ const reducer = (client, action) => {
         let new_users_in_local_storage = JSON.parse(localStorage.getItem('users')) || [];
         for (let i = 0; i < new_users_in_local_storage.length; i++) {
             if (new_users_in_local_storage[i].user_name === action.user) {
-                new_users_in_local_storage[i].ids.filter((id) => id !== action.id);
+                new_users_in_local_storage[i].ids = new_users_in_local_storage[i].ids.filter((id) => id !== action.id);
             }
         }
         localStorage.setItem('users', JSON.stringify(new_users_in_local_storage));
-
-        // delete in user in session storage
-        let new_user_in_session_storage = JSON.parse(sessionStorage.getItem('user'));
-        new_user_in_session_storage.ids = new_user_in_session_storage.ids.filter(id => id !== action.id);
-        sessionStorage.setItem('user', JSON.stringify(new_user_in_session_storage));
 
         let initialClient = {
             ...client,
