@@ -4,23 +4,38 @@
     justify-content: flex-start;
     align-items: center;
     border: 1px solid #00b96b;
-    height: 100px;
+    height: 130px;
     width: 250px;
-    padding-top: 20px;
     border-radius: 5px;
 
 }
 
 .programCard .titleInCard {
+    margin: 0;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b96b;
+    font-weight: 700;
+}
+
+.programCard .calsInCard {
+    margin: 0;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: capitalize;
-    font-size: 15px;
+    width: 100%;
+    font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #00b96b;
-    font-weight: 700;
-    margin: 0;
+    font-weight: 600;
 }
 
 .programCard .buttons {
@@ -28,7 +43,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .programCard .buttons .pdf {

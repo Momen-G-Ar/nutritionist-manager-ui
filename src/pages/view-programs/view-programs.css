@@ -46,6 +46,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
     width: 95%;
     border: 1px solid #00b96b;
     border-radius: 5px;
@@ -53,6 +54,7 @@
     padding: 15px;
     margin-top: 32px;
     margin-left: 32px;
+    margin-bottom: 10px;
     row-gap: 20px;
     column-gap: 20px;
 }

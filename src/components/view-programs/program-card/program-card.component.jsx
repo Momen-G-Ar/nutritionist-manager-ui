@@ -1,6 +1,7 @@
 import './program-card.css';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { Button } from 'antd';
 import { FilePdf, Trash } from 'phosphor-react';
 
@@ -50,11 +51,25 @@ const button_style = {
  * @returns 
  */
 const ProgramCard = (props) => {
-
+    const [calories, setCalories] = useState(0.00);
+    useEffect(() => {
+        let cal = 0.0;
+        cal += Number(props.client.status.saturday.calories);
+        cal += Number(props.client.status.sunday.calories);
+        cal += Number(props.client.status.monday.calories);
+        cal += Number(props.client.status.tuesday.calories);
+        cal += Number(props.client.status.wednesday.calories);
+        cal += Number(props.client.status.thursday.calories);
+        cal += Number(props.client.status.friday.calories);
+        setCalories(cal.toFixed(2));
+    }, []);
     return (
         <div className='programCard'>
             <h2 className='titleInCard'>
                 {props.client.info.name}
+            </h2>
+            <h2 className='calsInCard'>
+                Calories: {calories} Kcal
             </h2>
 
             <div className='buttons'>
