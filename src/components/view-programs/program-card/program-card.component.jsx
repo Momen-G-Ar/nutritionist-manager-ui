@@ -62,7 +62,7 @@ const ProgramCard = (props) => {
         cal += Number(props.client.status.thursday.calories);
         cal += Number(props.client.status.friday.calories);
         setCalories(cal.toFixed(2));
-    }, []);
+    }, [props.client]);
     return (
         <div className='programCard'>
             <h2 className='titleInCard'>

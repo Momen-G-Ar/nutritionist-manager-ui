@@ -10,11 +10,11 @@ import AddFoodCard from '../../components/new-program/add-food-card/add-food-car
 
 const NewProgram = () => {
     const { activeDay, client, addCard,
-        setActiveDay, setSelectedCity, handleAddProgram, dispatch, setAddCard } = useProgram();
+        setActiveDay, setSelectedCity, handleAddProgram, dispatch, setAddCard } = useProgram(3);
 
     return (
         <div className='newProgram'>
-            <AddFoodCard setAddCard={setAddCard} style={{ display: addCard ? 'flex' : 'none' }} activeDay={activeDay} />
+            <AddFoodCard dispatch={dispatch} setAddCard={setAddCard} style={{ display: addCard ? 'flex' : 'none' }} activeDay={activeDay} />
             <h2 className='titleInNewProgram'>
                 new program
             </h2>

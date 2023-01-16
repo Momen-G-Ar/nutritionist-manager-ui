@@ -19,7 +19,17 @@ import useAddFood from '../../../hooks/new-program/useAddFood';
  * @returns 
  */
 const AddFoodCard = (props) => {
-    const { table, selected, handleSelectChange, handleAddFood, foodTable } = useAddFood();
+    const { table, selected, handleSelectChange, foodTable } = useAddFood();
+
+    /**
+     * To add the food to the active day
+     * @param {String} activeDay 
+     */
+    const handleAddFood = () => {
+        if (selected !== -1) {
+            props.dispatch({ type: 'ADD_FOOD', food: foodTable[selected], day: props.activeDay });
+        }
+    };
 
     const handleCancel = () => {
         props.setAddCard(false);
@@ -37,13 +47,16 @@ const AddFoodCard = (props) => {
                 {
                     (selected !== -1)
                         ? <div className='foodCardInAddCard'>
+                            <label>
+                                Amount:
+                            </label>
                             <FoodCard ind={selected} food={foodTable[selected]} />
                         </div>
                         : null
                 }
                 <div className='saveAndCancelInAddCard'>
                     <Button type='primary' onClick={() => {
-                        handleAddFood(props.activeDay);
+                        handleAddFood();
                         props.setAddCard(false);
                     }}
                     >
