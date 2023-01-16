@@ -26,9 +26,9 @@ const AddFoodCard = (props) => {
      * @param {String} activeDay 
      */
     const handleAddFood = () => {
-        if (selected !== -1) {
-            props.dispatch({ type: 'ADD_FOOD', food: foodTable[selected], day: props.activeDay });
-        }
+
+        props.dispatch({ type: 'ADD_FOOD', food: foodTable[selected], day: props.activeDay });
+
     };
 
     const handleCancel = () => {
@@ -39,20 +39,18 @@ const AddFoodCard = (props) => {
         <div className='wrapperInAddCard' style={{ display: props.style.display }}>
             <div className='addCard' >
                 <Select
-                    defaultValue={'none'}
+                    defaultValue={table[0] || 'none'}
                     className='select'
                     options={table}
                     onChange={handleSelectChange}
                 />
                 {
-                    (selected !== -1)
-                        ? <div className='foodCardInAddCard'>
-                            <label>
-                                Amount:
-                            </label>
-                            <FoodCard ind={selected} food={foodTable[selected]} />
-                        </div>
-                        : null
+                    <div className='foodCardInAddCard'>
+                        <label>
+                            Amount:
+                        </label>
+                        <FoodCard ind={selected} food={foodTable[selected]} />
+                    </div>
                 }
                 <div className='saveAndCancelInAddCard'>
                     <Button type='primary' onClick={() => {

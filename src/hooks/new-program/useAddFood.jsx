@@ -1,10 +1,9 @@
 import { useMemo, useState } from "react";
-import useFood from "../food-table/useFood.hook";
 
 const useAddFood = () => {
-    const { foodTable } = useFood();
+    const [foodTable] = useState(JSON.parse(localStorage.getItem('food_table')) || []);
     const [table, setTable] = useState([]);
-    const [selected, setSelected] = useState(-1);
+    const [selected, setSelected] = useState(0);
 
     /**
      * To store the names of the foods in a new table
@@ -31,7 +30,7 @@ const useAddFood = () => {
             }
         });
         if (!fi)
-            setSelected(-1);
+            setSelected(0);
     };
 
     useMemo(() => {
