@@ -1,13 +1,14 @@
 /**
  * Reducer function updates the state of the client's days
  * To use these types in the dispatcher you must send parameters as following:
- * ADD_FOOD: type, food, day
+ * ADD_FOOD: type, food, day, amount
  * DELETE_FOOD: type, ind, day
  * SAVE_CLIENT: type, info, id
  * DELETE_CLIENT: type, id, user, setUser
  * 
  * @param {{
  *  type:String;
+ *  amount?:Number;
  *  ind?:Number;
  *  day?:String;
  *  id?:String;
@@ -61,7 +62,12 @@
 const reducer = (client, action) => {
     switch (action.type) {
         case 'ADD_FOOD': {
-            const newDay = [...client.days[action.day], action.food];
+            const newFood = {
+                ...action.food,
+                amount: action.amount,
+                calories: (action.amount * (action.food.calories / action.food.amount)).toFixed(2),
+            };
+            const newDay = [...client.days[action.day], newFood];
             return {
                 ...client,
                 days: {
@@ -72,7 +78,7 @@ const reducer = (client, action) => {
                     ...client.status,
                     [action.day]: {
                         meals: newDay.length,
-                        calories: newDay.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2)
+                        calories: newDay.reduce((prev, food) => prev + Number(food.calories), 0).toFixed(2),
                     }
                 }
             };
@@ -90,7 +96,7 @@ const reducer = (client, action) => {
                     ...client.status,
                     [action.day]: {
                         meals: newDay.length,
-                        calories: newDay.reduce((prev, food) => prev + (food.calories / food.amount), 0).toFixed(2)
+                        calories: newDay.reduce((prev, food) => prev + Number(food.calories), 0).toFixed(2)
                     }
                 }
             };

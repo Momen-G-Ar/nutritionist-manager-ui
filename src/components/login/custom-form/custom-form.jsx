@@ -125,7 +125,7 @@ const CustomForm = (props) => {
                     }}
                 >
                     <Button type="primary" htmlType="submit" style={{ width: '305px' }}>
-                        Submit
+                        Sing in
                     </Button>
                 </Form.Item>
             </Form>
