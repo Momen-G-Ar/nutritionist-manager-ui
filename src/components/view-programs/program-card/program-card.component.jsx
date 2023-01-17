@@ -4,12 +4,14 @@ import React, { useEffect, useState } from 'react';
 
 import { Button } from 'antd';
 import { FilePdf, Trash } from 'phosphor-react';
+import PDFPrinter from '../PDF-printer/PDF-printer';
 
 const button_style = {
     textAlign: 'left',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    textDecoration: 'none',
     alignItems: 'center',
     paddingLeft: 8,
     width: 80,
@@ -47,7 +49,6 @@ const button_style = {
  *      };
  *  };
  *  handleDeleteClient: ()=>void;
- *  handlePrintClient: ()=>void;
  * }} props 
  * @returns 
  */
@@ -74,20 +75,21 @@ const ProgramCard = (props) => {
             <h2 className='calsInCard'>
                 Calories: {calories} Kcal
             </h2>
-
             <div className='buttons'>
-                <div className='pdf' onClick={() => props.handlePrintClient(props.client)}>
-                    <Button
-                        type='primary'
-                        style={button_style}
-                    >
-                        PDF
-                    </Button>
-                    <FilePdf
-                        className='iconInButton'
-                        color='#fff'
-                        size={20}
-                    />
+                <div className='pdf'>
+                    <PDFPrinter client={props.client}>
+                        <Button
+                            type='primary'
+                            style={button_style}
+                        >
+                            PDF
+                        </Button>
+                        <FilePdf
+                            className='iconInButton'
+                            color='#fff'
+                            size={20}
+                        />
+                    </PDFPrinter>
                 </div>
                 <div className='delete' onClick={() => props.handleDeleteClient(props.client)}>
                     <Button

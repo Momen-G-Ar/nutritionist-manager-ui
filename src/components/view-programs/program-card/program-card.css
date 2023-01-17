@@ -10,6 +10,10 @@
 
 }
 
+a {
+    text-decoration: none;
+}
+
 .programCard .titleInCard {
     margin: 0;
     margin-top: 5px;
@@ -53,6 +57,7 @@
     align-items: center;
     cursor: pointer;
 }
+
 
 .programCard .buttons .delete {
     position: relative;

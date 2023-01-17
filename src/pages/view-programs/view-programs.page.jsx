@@ -11,7 +11,7 @@ import ProgramCard from './../../components/view-programs/program-card/program-c
 
 const ViewPrograms = () => {
     const { clientTable, myParams,
-        handleDeleteClient, handleSearchChange, handlePrintClient } = useViewPrograms();
+        handleDeleteClient, handleSearchChange } = useViewPrograms();
 
     return (
         <div className='viewPrograms'>
@@ -34,7 +34,6 @@ const ViewPrograms = () => {
                                 key={i + ' ' + client}
                                 handleDeleteClient={handleDeleteClient}
                                 client={client}
-                                handlePrintClient={handlePrintClient}
                             />;
                         })
                         : <div className='empty'>
