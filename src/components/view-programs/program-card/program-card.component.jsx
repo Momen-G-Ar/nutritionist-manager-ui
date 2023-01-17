@@ -47,11 +47,13 @@ const button_style = {
  *      };
  *  };
  *  handleDeleteClient: ()=>void;
+ *  handlePrintClient: ()=>void;
  * }} props 
  * @returns 
  */
 const ProgramCard = (props) => {
     const [calories, setCalories] = useState(0.00);
+
     useEffect(() => {
         let cal = 0.0;
         cal += Number(props.client.status.saturday.calories);
@@ -63,6 +65,7 @@ const ProgramCard = (props) => {
         cal += Number(props.client.status.friday.calories);
         setCalories(cal.toFixed(2));
     }, [props.client]);
+
     return (
         <div className='programCard'>
             <h2 className='titleInCard'>
@@ -73,7 +76,7 @@ const ProgramCard = (props) => {
             </h2>
 
             <div className='buttons'>
-                <div className='pdf'>
+                <div className='pdf' onClick={() => props.handlePrintClient(props.client)}>
                     <Button
                         type='primary'
                         style={button_style}
@@ -94,8 +97,6 @@ const ProgramCard = (props) => {
                         Delete
                     </Button>
                     <Trash
-                        onClick={() => props.handleDeleteClient(props.client)}
-                        style={{ cursor: 'pointer' }}
                         className='iconInButton'
                         color='#fff'
                         size={18}

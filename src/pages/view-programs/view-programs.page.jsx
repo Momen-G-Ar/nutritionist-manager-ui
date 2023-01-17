@@ -10,7 +10,8 @@ import ProgramCard from './../../components/view-programs/program-card/program-c
 
 
 const ViewPrograms = () => {
-    const { clientTable, myParams, handleDeleteClient, handleSearchChange } = useViewPrograms();
+    const { clientTable, myParams,
+        handleDeleteClient, handleSearchChange, handlePrintClient } = useViewPrograms();
 
     return (
         <div className='viewPrograms'>
@@ -28,7 +29,14 @@ const ViewPrograms = () => {
             <div className={`clientsInViewPrograms ${clientTable.length === 0 ? 'empty' : ''}`}>
                 {
                     (clientTable.length > 0)
-                        ? clientTable.map((client, i) => <ProgramCard key={i + ' ' + client} handleDeleteClient={handleDeleteClient} client={client} />)
+                        ? clientTable.map((client, i) => {
+                            return <ProgramCard
+                                key={i + ' ' + client}
+                                handleDeleteClient={handleDeleteClient}
+                                client={client}
+                                handlePrintClient={handlePrintClient}
+                            />;
+                        })
                         : <div className='empty'>
                             <img src={emptyList} alt='empty list' />
                             <span>No Clients</span>

@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .programCard .buttons .delete {
@@ -58,6 +59,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .programCard .buttons .delete .iconInButton {

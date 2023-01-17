@@ -35,6 +35,18 @@ const useViewPrograms = () => {
         setUser(new_user_in_session_storage);
     };
 
+    /**
+     * To download pdf for the client
+     * @param {} the_client 
+     */
+    const handlePrintClient = (the_client) => {
+        const file = 'https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg';
+        let link = document.createElement('a');
+        link.href = file;
+        link.download = the_client.info.name;
+        link.click();
+    };
+
     const clientTable = useMemo(() => {
         const allClients = JSON.parse(localStorage.getItem('clients')) || [];
         let newTable = allClients.filter((client) => {
@@ -54,10 +66,9 @@ const useViewPrograms = () => {
     }, [myParams, user]);
 
 
-
     return {
         clientTable, myParams,
-        handleDeleteClient, handleSearchChange,
+        handleDeleteClient, handleSearchChange, handlePrintClient,
     };
 };
 
