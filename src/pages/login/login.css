@@ -1,6 +1,6 @@
 .login {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -8,8 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 50%;
     height: 92.1vh;
+    overflow: auto;
 }
 
 .login .right .infoHolder {
@@ -21,7 +21,7 @@
     box-shadow: 3px 2px 5px 1px #00b96b;
     border-radius: 5px;
     width: 360px;
-    height: 400px;
+    min-height: 390px;
     row-gap: 16px;
 }
 
@@ -43,8 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 50%;
     height: 92.1vh;
+    overflow: auto;
 }
 
 .login .left .primaryCarousel {
@@ -56,7 +56,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 100px;
     border: 0.01em solid #00b96b;
     border-radius: 5px;
 }

@@ -6,16 +6,15 @@ import FoodCard from '../food-card/food-card.component';
 import useAddFood from '../../../hooks/new-program/useAddFood';
 import Input from './../../common/input/input';
 
-//onClick={() => props.setAddCard(false)}
-
 /**
  * To render component to add food
  * @param {{
- *  setAddCard: React.Dispatch<React.SetStateAction<boolean>>
+ *  setAddCard: React.Dispatch<React.SetStateAction<boolean>>;
+ *  dispatch: React.Dispatch<{}>;
  *  style:{
  *  display:String;
  *  activeDay:String;
- * }
+ *  }
  * }} props 
  * @returns 
  */

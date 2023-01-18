@@ -4,6 +4,7 @@
     align-items: center;
     position: absolute;
     top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
 }
@@ -12,15 +13,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgba(171, 171, 171, 0.5);
     cursor: pointer;
     z-index: 1;
-    opacity: 0.7;
     position: absolute;
     height: 100vh;
     width: 100vw;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    backdrop-filter: blur(2px) ;
 }
 
 .wrapperInAddCard .addCard {
@@ -28,7 +27,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 40vh;
+    height: 45vh;
     width: 25vw;
     background-color: #fff;
     z-index: 2;
@@ -51,11 +50,13 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 16px;
+    
 }
 
 .wrapperInAddCard .addCard .inputInAddCard .inputGroup {
     margin: 0;
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
 .wrapperInAddCard .addCard .foodCardInAddCard {
@@ -66,8 +67,8 @@
     width: 100%;
     height: max-content;
     margin: 0;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 16px;
+    margin-bottom: 30px;
 
 }
 
