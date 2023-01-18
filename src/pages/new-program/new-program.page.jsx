@@ -11,7 +11,7 @@ import AddFoodCard from '../../components/new-program/add-food-card/add-food-car
 const NewProgram = () => {
     const { activeDay, client, addCard,
         setActiveDay, setSelectedCity, handleAddProgram, dispatch, setAddCard } = useProgram(3);
-
+    //TODO: make the addFoodCard with blur background
     return (
         <div className='newProgram'>
             <AddFoodCard dispatch={dispatch} setAddCard={setAddCard} style={{ display: addCard ? 'flex' : 'none' }} activeDay={activeDay} />

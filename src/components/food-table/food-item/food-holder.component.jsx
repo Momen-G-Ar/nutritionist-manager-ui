@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 import CustomSpaceSplit from '../custom-space-split/custom-space-split';
 import { Trash, PencilSimpleLine } from 'phosphor-react';
-import { Button, Image } from 'antd';
-import Input from '../../common/input/input';
+import { Image } from 'antd';
+import EditFood from '../edit-food/edit-food.component';
 
 /**
  * A card to render the food item description in it
@@ -31,41 +31,11 @@ import Input from '../../common/input/input';
 const FoodItem = (props) => {
     const [edit, setEdit] = useState(false);
 
-    /**
-    * Handler function for the form onSubmit event.
-    * @param {React.FormEvent<HTMLFormElement>} e Event object.
-    */
-    const handleEditFood = (e) => {
-        e.preventDefault();
-        const id = props.food.id;
-        const name = e.target.name.value;
-        const image = e.target.image.value;
-        const amount = Number(e.target.amount.value);
-        const calories = Number(e.target.calories.value);
-
-        const food = {
-            id, name, image, amount, calories
-        };
-        props.editFoodItem(food);
-        setEdit(false);
-    };
-
     return (
         <div className='foodHolder'>
             {
                 edit
-                    ? <>
-                        <form onSubmit={handleEditFood}>
-                            <Input defaultValue={props.food.name} label={'name'} name={'name'} required />
-                            <Input defaultValue={props.food.image} label={'image src'} name={'image'} required />
-                            <Input defaultValue={props.food.amount} label={'amount'} name={'amount'} required type={'number'} />
-                            <Input defaultValue={props.food.calories} label={'calories'} name={'calories'} required type={'number'} />
-                            <div className='saveAndCancel'>
-                                <Button type='primary' htmlType='submit'>Save</Button>
-                                <Button type='primary' onClick={() => setEdit(false)}>Cancel</Button>
-                            </div>
-                        </form>
-                    </>
+                    ? <EditFood editFoodItem={props.editFoodItem} setEdit={setEdit} food={props.food} />
                     : <>
                         <Image className='customImage' src={props.food.image} alt={props.food.name} />
                         <h3>{props.food.name}</h3>

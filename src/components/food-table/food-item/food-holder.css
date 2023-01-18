@@ -22,15 +22,6 @@
     width: 220px;
 }
 
-.foodHolder form .saveAndCancel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 8px;
-    column-gap: 55px;
-}
-
 .foodHolder .customImage {
     width: 300px;
     height: 200px;

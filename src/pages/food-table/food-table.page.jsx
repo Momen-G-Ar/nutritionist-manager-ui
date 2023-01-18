@@ -11,7 +11,16 @@ import { Button } from 'antd';
 import emptyList from '../../assets/empty-box-100.png';
 
 const FoodTable = () => {
-    const { addNew, foodTable, addFoodItem, deleteFoodItem, editFoodItem, showAddNew, hideAddNew } = useFood();
+    const {
+        addNew,
+        foodTable,
+        deleteFoodItem,
+        editFoodItem,
+        showAddNew,
+        hideAddNew,
+        handleAddFood,
+        handleImageChange } = useFood();
+
     const navigate = useNavigate();
     const user_context = useContext(UserContext);
 
@@ -39,7 +48,8 @@ const FoodTable = () => {
                 {
                     !addNew &&
                     <AddFoodForm
-                        addFoodItem={addFoodItem}
+                        handleImageChange={handleImageChange}
+                        handleAddFood={handleAddFood}
                     />
                 }
                 <div
