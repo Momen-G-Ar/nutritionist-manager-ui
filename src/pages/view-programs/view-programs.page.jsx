@@ -10,8 +10,12 @@ import ProgramCard from './../../components/view-programs/program-card/program-c
 
 
 const ViewPrograms = () => {
-    const { clientTable, myParams,
-        handleDeleteClient, handleSearchChange } = useViewPrograms();
+    const {
+        clientTable,
+        myParams,
+        handleDeleteClient,
+        handleSearchChange
+    } = useViewPrograms();
 
     return (
         <div className='viewPrograms'>

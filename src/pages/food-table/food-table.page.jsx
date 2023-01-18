@@ -19,7 +19,8 @@ const FoodTable = () => {
         showAddNew,
         hideAddNew,
         handleAddFood,
-        handleImageChange } = useFood();
+        handleImageChange
+    } = useFood();
 
     const navigate = useNavigate();
     const user_context = useContext(UserContext);

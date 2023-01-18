@@ -9,12 +9,25 @@ import WeekTable from '../../components/new-program/week-table/week-table.compon
 import AddFoodCard from '../../components/new-program/add-food-card/add-food-card';
 
 const NewProgram = () => {
-    const { activeDay, client, addCard,
-        setActiveDay, setSelectedCity, handleAddProgram, dispatch, setAddCard } = useProgram(3);
-    //TODO: make the addFoodCard with blur background
+    const {
+        activeDay,
+        client,
+        addCard,
+        setActiveDay,
+        setSelectedCity,
+        handleAddProgram,
+        dispatch,
+        setAddCard
+    } = useProgram();
+
     return (
         <div className='newProgram'>
-            <AddFoodCard dispatch={dispatch} setAddCard={setAddCard} style={{ display: addCard ? 'flex' : 'none' }} activeDay={activeDay} />
+            <AddFoodCard
+                activeDay={activeDay}
+                style={{ display: addCard ? 'flex' : 'none' }}
+                dispatch={dispatch}
+                setAddCard={setAddCard}
+            />
             <h2 className='titleInNewProgram'>
                 new program
             </h2>
@@ -25,15 +38,14 @@ const NewProgram = () => {
                 </div>
                 <div className='weekInfo'>
                     <WeekTable
+                        client={client}
+                        activeDay={activeDay}
                         setAddCard={setAddCard}
                         setActiveDay={setActiveDay}
-                        activeDay={activeDay}
-                        client={client}
                         dispatch={dispatch}
                     />
                 </div>
             </form>
-
         </div>
     );
 };

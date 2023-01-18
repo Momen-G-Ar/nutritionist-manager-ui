@@ -55,7 +55,7 @@ const useProgram = () => {
     const [addCard, setAddCard] = useState(false);
     const { user, editUser } = useContext(UserContext);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         if (!user)
             navigate('/login', { replace: true });
@@ -82,8 +82,6 @@ const useProgram = () => {
         editUser(newUser);
         dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
     };
-
-
 
     return {
         addCard, activeDay, client,

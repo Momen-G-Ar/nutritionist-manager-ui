@@ -10,7 +10,7 @@ const useParams = () => {
     }, [params]);
 
     /**
-     * 
+     * To change the params of the URLSearchParams
      * @param {String} name 
      * @param {String} value 
      */

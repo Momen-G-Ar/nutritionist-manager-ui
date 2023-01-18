@@ -10,11 +10,13 @@ import { Button } from 'antd';
 const HomePage = () => {
     const navigate = useNavigate();
     const user_context = useContext(UserContext);
+    
     useEffect(() => {
         if (!user_context.user) {
             navigate('/login', { replace: true });
         }
     }, [user_context, navigate]);
+
     return (
         <div className='homePage'>
             <div className='image'>
