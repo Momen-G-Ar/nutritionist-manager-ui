@@ -20,7 +20,9 @@ const HomePage = () => {
     return (
         <div className='homePage'>
             <div className='image'>
-                <ImageSlider />
+                <ImageSlider
+                    effect='fade'
+                />
             </div>
             <div className='buttons'>
                 <Button
