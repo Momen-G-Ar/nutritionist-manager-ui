@@ -1,0 +1,24 @@
+/*An antd className*/
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-slide .imageInSlider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 840px;
+    height: 540px;
+    border: 0.01em solid #00b96b;
+}
+
+.login .left>div,
+.homePage .image>div {
+    justify-content: center;
+    align-items: center;
+    width: 850px;
+    height: 540px;
+}

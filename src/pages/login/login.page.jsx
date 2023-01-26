@@ -5,8 +5,8 @@ import React, { useContext, useEffect } from 'react';
 import { UserContext } from './../../components/providers/user-provider.component';
 import { useNavigate } from 'react-router-dom';
 import CustomForm from './../../components/login/custom-form/custom-form';
+import ImageSlider from '../../components/common/image-slider/image-slider.component';
 
-// TODO: delete the image and add carousel line: 15 with its design in css 
 const Login = () => {
     const user_context = useContext(UserContext);
     const navigate = useNavigate();
@@ -20,10 +20,7 @@ const Login = () => {
     return (
         <div className='login'>
             <div className='left'>
-                <img
-                    src="https://tampacardio.com/wp-content/uploads/2021/04/Tampa-cardio-nutritionist-tampa.jpg"
-                    alt="food"
-                />
+                <ImageSlider />
             </div>
             <div className='right'>
                 <div className='infoHolder'>

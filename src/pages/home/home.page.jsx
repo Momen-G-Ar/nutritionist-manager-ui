@@ -5,12 +5,12 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './../../components/providers/user-provider.component';
 import { Button } from 'antd';
+import ImageSlider from '../../components/common/image-slider/image-slider.component';
 
-// TODO: switch the image line: 14 -> image slider
 const HomePage = () => {
     const navigate = useNavigate();
     const user_context = useContext(UserContext);
-    
+
     useEffect(() => {
         if (!user_context.user) {
             navigate('/login', { replace: true });
@@ -20,10 +20,7 @@ const HomePage = () => {
     return (
         <div className='homePage'>
             <div className='image'>
-                <img
-                    src="https://tampacardio.com/wp-content/uploads/2021/04/Tampa-cardio-nutritionist-tampa.jpg"
-                    alt="food"
-                />
+                <ImageSlider />
             </div>
             <div className='buttons'>
                 <Button

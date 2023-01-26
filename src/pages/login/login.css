@@ -10,6 +10,7 @@
     align-items: center;
     height: 92.1vh;
     overflow: auto;
+    width: 40%;
 }
 
 .login .right .infoHolder {
@@ -44,24 +45,7 @@
     justify-content: center;
     align-items: center;
     height: 92.1vh;
+    width: 50%;
     overflow: auto;
-}
-
-.login .left .primaryCarousel {
-    width: 500px;
-    height: 50vh;
-}
-
-.login .left img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.01em solid #00b96b;
-    border-radius: 5px;
-}
-
-.login .left .primaryCarousel img {
-    display: flex;
-    width: 400px;
-    height: 300px;
+    margin-left: 5%;
 }
