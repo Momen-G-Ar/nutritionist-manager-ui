@@ -8,14 +8,14 @@ import CustomForm from './../../components/login/custom-form/custom-form';
 import ImageSlider from '../../components/common/image-slider/image-slider.component';
 
 const Login = () => {
-    const user_context = useContext(UserContext);
+    const userContext = useContext(UserContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user_context.user) {
+        if (userContext.user) {
             navigate('/home-page', { replace: true });
         }
-    }, [user_context, navigate]);
+    }, [userContext, navigate]);
 
     return (
         <div className='login'>
@@ -26,7 +26,7 @@ const Login = () => {
                 <div className='infoHolder'>
                     <h3>LOGIN</h3>
                     <CustomForm
-                        setUser={user_context.setUser}
+                        setUser={userContext.setUser}
                     />
                 </div>
             </div>

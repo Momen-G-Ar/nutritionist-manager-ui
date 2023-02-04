@@ -23,7 +23,7 @@ const UserProvider = (props) => {
 
         let usersFromLocalStorage = JSON.parse(localStorage.getItem('users')) || [];
         for (let i = 0; i < usersFromLocalStorage.length; i++) {
-            if (usersFromLocalStorage[i].user_name === user.user_name) {
+            if (usersFromLocalStorage[i].userName === user.userName) {
                 usersFromLocalStorage[i] = user;
             }
         }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Divider, Space } from 'antd';
 
-const border_style = {
+const borderStyle = {
     position: 'relative',
     top: '-0.06em',
     display: 'flex',
@@ -24,7 +24,7 @@ const border_style = {
  */
 const CustomSpaceSplit = (props) => {
     return (
-        <Space split={<Divider type='vertical' style={border_style} />}>
+        <Space split={<Divider type='vertical' style={borderStyle} />}>
             {props.children}
         </Space >
     );

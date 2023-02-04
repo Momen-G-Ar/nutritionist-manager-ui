@@ -18,49 +18,49 @@ const MultiDays = (props) => {
         <>
             <Day
                 active={props.activeDay === 'saturday'}
-                day_name='saturday'
+                dayName='saturday'
                 top={-32}
                 left={-1}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'sunday'}
-                day_name='sunday'
+                dayName='sunday'
                 top={-32}
                 left={101}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'monday'}
-                day_name='monday'
+                dayName='monday'
                 top={-32}
                 left={203}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'tuesday'}
-                day_name='tuesday'
+                dayName='tuesday'
                 top={-32}
                 left={305}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'wednesday'}
-                day_name='wednesday'
+                dayName='wednesday'
                 top={-32}
                 left={407}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'thursday'}
-                day_name='thursday'
+                dayName='thursday'
                 top={-32}
                 left={509}
                 setActiveDay={props.setActiveDay}
             />
             <Day
                 active={props.activeDay === 'friday'}
-                day_name='friday'
+                dayName='friday'
                 top={-32}
                 left={611}
                 setActiveDay={props.setActiveDay}

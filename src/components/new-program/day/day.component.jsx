@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * To render the days label exits above the week div
  * @param {{
- *  day_name:String;
+ *  dayName:String;
  *  top:Number;
  *  left:Number;
  *  active:Boolean;
@@ -17,7 +17,7 @@ import React from 'react';
 const Day = (props) => {
 
     const handleActivateDate = () => {
-        props.setActiveDay(props.day_name);
+        props.setActiveDay(props.dayName);
     };
 
     return (
@@ -26,7 +26,7 @@ const Day = (props) => {
             className={`${props.active ? 'active' : 'day'}`}
             style={{ top: `${props.top}px`, left: `${props.left}px` }}
         >
-            {props.day_name}
+            {props.dayName}
         </span>
     );
 };

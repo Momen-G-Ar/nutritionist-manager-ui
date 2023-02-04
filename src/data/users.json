@@ -1,31 +1,31 @@
 [
     {
-        "user_name": "momen",
+        "userName": "momen",
         "password": "123456",
         "ids": []
     },
     {
-        "user_name": "momen2",
+        "userName": "momen2",
         "password": "1234567",
         "ids": []
     },
     {
-        "user_name": "momen3",
+        "userName": "momen3",
         "password": "12345678",
         "ids": []
     },
     {
-        "user_name": "momen4",
+        "userName": "momen4",
         "password": "123456789",
         "ids": []
     },
     {
-        "user_name": "qusai",
+        "userName": "qusai",
         "password": "qa123456789",
         "ids": []
     },
     {
-        "user_name": "khaldon",
+        "userName": "khaldon",
         "password": "kh123456789",
         "ids": []
     }

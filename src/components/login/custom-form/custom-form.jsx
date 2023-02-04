@@ -19,12 +19,12 @@ const CustomForm = (props) => {
     /**
      * Function to take the input fields and send them to the destination handleLogin
      * @param {{
-     *  user_name:String;
+     *  userName:String;
      *  password:String;
      * }} values 
      */
     const onFinish = (values) => {
-        const result_from_handle = handleLogin(values.user_name, values.password);
+        const result_from_handle = handleLogin(values.userName, values.password);
         if (result_from_handle) {
             setWrong(false);
             props.setUser(result_from_handle);
@@ -68,7 +68,7 @@ const CustomForm = (props) => {
             >
                 <Form.Item
                     label="Username"
-                    name="user_name"
+                    name="userName"
                     rules={[
                         {
                             required: true,

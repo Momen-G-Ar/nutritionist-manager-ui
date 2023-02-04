@@ -1,12 +1,12 @@
 /**
  * To check if the user name and password is correct 
- * @param {String} user_name 
+ * @param {String} userName 
  * @param {String} password 
 */
-const handleLogin = (user_name, password) => {
+const handleLogin = (userName, password) => {
     const USERS = JSON.parse(localStorage.getItem('users'));
     return USERS.find((user) =>
-        String(user.user_name).toLowerCase().trim() === user_name.toLowerCase().trim()
+        String(user.userName).toLowerCase().trim() === userName.toLowerCase().trim()
         && String(user.password).toLowerCase().trim() === password.toLowerCase().trim())
         || null;
 };
@@ -14,7 +14,7 @@ const handleLogin = (user_name, password) => {
 /**
  * To save the user in the session storage
  * @param {{
- *  user_name:String;
+ *  userName:String;
  *  password:String;
  * }} user 
  */

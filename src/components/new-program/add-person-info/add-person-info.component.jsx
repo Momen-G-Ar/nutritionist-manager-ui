@@ -5,7 +5,7 @@ import React from 'react';
 import Input from '../../common/input/input';
 import { Select } from 'antd';
 
-const options_of_select = [
+const optionsOfSelect = [
     {
         value: 'Hebron',
         label: 'Hebron',
@@ -73,7 +73,7 @@ const AddPersonInfo = (props) => {
                         onChange={value => props.setSelectedCity(value)}
                         defaultValue="Hebron"
                         style={{ width: 320, height: 32 }}
-                        options={options_of_select}
+                        options={optionsOfSelect}
                     />
                 </div>
             </div>

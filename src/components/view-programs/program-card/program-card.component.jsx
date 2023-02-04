@@ -6,7 +6,7 @@ import { Button } from 'antd';
 import { FilePdf, Trash } from 'phosphor-react';
 import PDFPrinter from '../PDF-printer/PDF-printer';
 
-const button_style = {
+const buttonStyle = {
     textAlign: 'left',
     display: 'flex',
     flexDirection: 'row',
@@ -80,7 +80,7 @@ const ProgramCard = (props) => {
                     <PDFPrinter client={props.client}>
                         <Button
                             type='primary'
-                            style={button_style}
+                            style={buttonStyle}
                         >
                             PDF
                         </Button>
@@ -94,7 +94,7 @@ const ProgramCard = (props) => {
                 <div className='delete' onClick={() => props.handleDeleteClient(props.client)}>
                     <Button
                         type='primary'
-                        style={button_style}
+                        style={buttonStyle}
                     >
                         Delete
                     </Button>

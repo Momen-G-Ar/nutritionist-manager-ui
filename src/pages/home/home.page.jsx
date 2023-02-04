@@ -9,13 +9,13 @@ import ImageSlider from '../../components/common/image-slider/image-slider.compo
 
 const HomePage = () => {
     const navigate = useNavigate();
-    const user_context = useContext(UserContext);
+    const userContext = useContext(UserContext);
 
     useEffect(() => {
-        if (!user_context.user) {
+        if (!userContext.user) {
             navigate('/login', { replace: true });
         }
-    }, [user_context, navigate]);
+    }, [userContext, navigate]);
 
     return (
         <div className='homePage'>

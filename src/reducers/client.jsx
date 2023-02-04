@@ -136,23 +136,23 @@ const reducer = (client, action) => {
 
         case 'DELETE_CLIENT': {
             // delete in user in session storage
-            let new_user_in_session_storage = JSON.parse(sessionStorage.getItem('user'));
-            new_user_in_session_storage.ids = new_user_in_session_storage.ids.filter(id => id !== action.id);
-            sessionStorage.setItem('user', JSON.stringify(new_user_in_session_storage));
+            let newUserInSessionStorage = JSON.parse(sessionStorage.getItem('user'));
+            newUserInSessionStorage.ids = newUserInSessionStorage.ids.filter(id => id !== action.id);
+            sessionStorage.setItem('user', JSON.stringify(newUserInSessionStorage));
 
             // delete in client in local storage
-            let new_clients_in_local_storage = JSON.parse(localStorage.getItem('clients')) || [];
-            new_clients_in_local_storage = new_clients_in_local_storage.filter((client) => client.id !== action.id);
-            localStorage.setItem('clients', JSON.stringify(new_clients_in_local_storage));
+            let newClientsInLocalStorage = JSON.parse(localStorage.getItem('clients')) || [];
+            newClientsInLocalStorage = newClientsInLocalStorage.filter((client) => client.id !== action.id);
+            localStorage.setItem('clients', JSON.stringify(newClientsInLocalStorage));
 
             // delete in users in local storage
-            let new_users_in_local_storage = JSON.parse(localStorage.getItem('users')) || [];
-            for (let i = 0; i < new_users_in_local_storage.length; i++) {
-                if (new_users_in_local_storage[i].user_name === action.user) {
-                    new_users_in_local_storage[i].ids = new_users_in_local_storage[i].ids.filter((id) => id !== action.id);
+            let newUsersInLocalStorage = JSON.parse(localStorage.getItem('users')) || [];
+            for (let i = 0; i < newUsersInLocalStorage.length; i++) {
+                if (newUsersInLocalStorage[i].userName === action.user) {
+                    newUsersInLocalStorage[i].ids = newUsersInLocalStorage[i].ids.filter((id) => id !== action.id);
                 }
             }
-            localStorage.setItem('users', JSON.stringify(new_users_in_local_storage));
+            localStorage.setItem('users', JSON.stringify(newUsersInLocalStorage));
 
             return {
                 id: '', info: { name: '', phone: 0, email: '', date: '', city: '' },

@@ -26,13 +26,13 @@ const useViewPrograms = () => {
 
     /**
      * To delete the client from the clients
-     * @param {} the_client 
+     * @param {} theClient 
      */
-    const handleDeleteClient = (the_client) => {
-        dispatch({ type: 'DELETE_CLIENT', id: the_client.id, user: user.user_name });
-        let new_user_in_session_storage = { ...user };
-        new_user_in_session_storage.ids = new_user_in_session_storage.ids.filter(id => id !== the_client.id);
-        setUser(new_user_in_session_storage);
+    const handleDeleteClient = (theClient) => {
+        dispatch({ type: 'DELETE_CLIENT', id: theClient.id, user: user.userName });
+        let newUserInSessionStorage = { ...user };
+        newUserInSessionStorage.ids = newUserInSessionStorage.ids.filter(id => id !== theClient.id);
+        setUser(newUserInSessionStorage);
     };
 
     const clientTable = useMemo(() => {
