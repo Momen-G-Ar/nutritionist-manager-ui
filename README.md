@@ -47,8 +47,7 @@ This project is implemented for practice purposes. The main motivation for this 
  * Component name: Pascal Case
  * CSS Class name: Camel Case
  * Function name: Camel Case
- * Variable name: Camel Case
-  
+ * Variable name: Camel Case  
 
 ## Version
  It is the first version
