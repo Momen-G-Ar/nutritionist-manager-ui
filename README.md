@@ -35,11 +35,11 @@ This project is implemented for practice purposes. The main motivation for this 
  * CSS: for designs and styles
 
 ## Requirements
- * Clone the repo file from the gitlab
+ * Clone the repo file from the GitLab
  * Write ``` npm i ``` in the console to install the node_module
  * Write ``` npm i --legacy-peer-deps ``` in the console to install the react-pdf/renderer
- * Open the file ``` src/data/users.js ``` and copy its data and paste it in the LocalStorage with key **users**
- * If you want some foods in your table: Open the file ``` src/data/food-table.js ``` and copy its data and paste it in the LocalStorage with key **food_table**
+ * Open the file ``` src/data/users.js ``` and copy its data and paste it into the LocalStorage with key **users**
+ * If you want some foods in your table: Open the file ``` src/data/food-table.js ``` and copy its data and paste it into the LocalStorage with key **food_table**
 
 ## Conventions
  * Tab Size: 4
