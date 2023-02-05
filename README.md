@@ -6,6 +6,7 @@
   - [Technologies](#technologies)
   - [Features](#features)
   - [Built with](#built-with)
+  - [Requirements](#requirements)
   - [Conventions](#conventions)
   - [Version](#version)
   - [Author](#author)
@@ -32,6 +33,13 @@ This project is implemented for practice purposes. The main motivation for this 
 ## Built with
  * React: Javascript Library
  * CSS: for designs and styles
+
+## Requirements
+ * Clone the repo file from the gitlab
+ * Write ``` npm i ``` in the console to install the node_module
+ * Write ``` npm i --legacy-peer-deps ``` in the console to install the react-pdf/renderer
+ * Open the file ``` src/data/users.js ``` and copy its data and paste it in the LocalStorage with key **users**
+ * If you want some foods in your table: Open the file ``` src/data/food-table.js ``` and copy its data and paste it in the LocalStorage with key **food_table**
 
 ## Conventions
  * Tab Size: 4
