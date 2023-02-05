@@ -2,12 +2,9 @@
 > Website provides a good way to manage a nutritionist clinic.
 
 ## Table of Content
-- [Nutritionist Clinic](#nutritionist-clinic)
-  - [Table of Content](#table-of-content)
   - [General Information](#general-information)
   - [Technologies](#technologies)
   - [Features](#features)
-      - [To-do list:](#to-do-list)
   - [Built with](#built-with)
   - [Conventions](#conventions)
   - [Version](#version)
@@ -27,7 +24,7 @@ This project is implemented for practice purposes. The main motivation for this 
  * Print the information and the program of any patient 
  * Login page
 
-#### To-do list:
+ To-do list:
  * A way to add new users to the clinic 
  * Add edit patient's program feature
  * Better design for the pages
@@ -37,7 +34,7 @@ This project is implemented for practice purposes. The main motivation for this 
  * CSS: for designs and styles
 
 ## Conventions
- * Tab Size : 4
+ * Tab Size: 4
  * File & Folder name: Shawerma Case
  * Component name: Pascal Case
  * CSS Class name: Camel Case
