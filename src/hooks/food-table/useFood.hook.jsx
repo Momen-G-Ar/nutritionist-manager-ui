@@ -48,7 +48,6 @@ const useFood = () => {
      * }} food 
      */
     const editFoodItem = async (food) => {
-        console.log(food);
         food.addedBy = user.user._id;
         const updateFood = await foodService.updateFood(food);
         if (updateFood) {
@@ -86,7 +85,6 @@ const useFood = () => {
 
         const food = { name, image, amount, calories, addedBy: user.user._id };
         const addItem = await foodService.AddFood(food);
-        console.log(addItem);
         if (addItem) {
 
             if (addItem.status === 201) {
