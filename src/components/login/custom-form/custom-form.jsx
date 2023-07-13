@@ -28,8 +28,8 @@ const CustomForm = (props) => {
         if (result_from_handle) {
             if (result_from_handle.status === 200) {
                 setWrong(false);
-                props.setUser(result_from_handle);
-                setSessionStorage(result_from_handle);
+                props.setUser(result_from_handle.value);
+                setSessionStorage(result_from_handle.value);
                 navigate('/home-page', { replace: true });
             }
             else {

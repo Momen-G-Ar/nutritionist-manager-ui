@@ -1,5 +1,6 @@
-import { useState } from "react";
-
+import React from "react";
+import foodService from '../../services/food';
+import { UserContext } from "../../components/providers/user-provider.component";
 const useFood = () => {
     /**
     * To give a types fo the food table
@@ -11,10 +12,11 @@ const useFood = () => {
     *  calories: Number;
     * }>[]} 
     */
-    const [foodTable, setFoodTable] = useState(JSON.parse(localStorage.getItem('food_table')) || []);
-    const [addNew, setAddNew] = useState(true);
-    const [imageFile, setImageFile] = useState('');
-
+    const [foodTable, setFoodTable] = React.useState(JSON.parse(localStorage.getItem('food_table')) || []);
+    const [addNew, setAddNew] = React.useState(true);
+    const [imageFile, setImageFile] = React.useState('');
+    const user = React.useContext(UserContext);
+    console.log(user);
     /**
      * To add new item to the table and edit the local storage to the new table
      * @param {{
@@ -85,7 +87,27 @@ const useFood = () => {
         const food = {
             id, name, image, amount, calories
         };
+
+
+
         addFoodItem(food);
+    };
+
+    const getFoodItems = async () => {
+        const items = await foodService.getAllFoods(user.user._id, true);
+        if (items) {
+
+            if (items.status === 200) {
+                setFoodTable(items.value.foodTable);
+            }
+            else {
+                setFoodTable([]);
+                alert(items.message);
+            }
+        }
+        else {
+            alert('Internal Server Error');
+        }
     };
 
     /**
@@ -99,6 +121,10 @@ const useFood = () => {
             setImageFile(reader.result);
         });
     };
+
+    React.useMemo(async () => {
+        await getFoodItems();
+    }, []);
 
     return {
         addNew,
