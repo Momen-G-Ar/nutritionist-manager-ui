@@ -23,16 +23,22 @@ const CustomForm = (props) => {
      *  password:String;
      * }} values 
      */
-    const onFinish = (values) => {
-        const result_from_handle = handleLogin(values.userName, values.password);
+    const onFinish = async (values) => {
+        const result_from_handle = await handleLogin(values.userName, values.password);
         if (result_from_handle) {
-            setWrong(false);
-            props.setUser(result_from_handle);
-            setSessionStorage(result_from_handle);
-            navigate('/home-page', { replace: true });
+            if (result_from_handle.status === 200) {
+                setWrong(false);
+                props.setUser(result_from_handle);
+                setSessionStorage(result_from_handle);
+                navigate('/home-page', { replace: true });
+            }
+            else {
+                setWrong(true);
+                alert(result_from_handle.message);
+            }
         }
         else {
-            setWrong(true);
+            alert('Internal Server error');
         }
 
     };

@@ -3,12 +3,21 @@
  * @param {String} userName 
  * @param {String} password 
 */
-const handleLogin = (userName, password) => {
-    const USERS = JSON.parse(localStorage.getItem('users'));
-    return USERS.find((user) =>
-        String(user.userName).toLowerCase().trim() === userName.toLowerCase().trim()
-        && String(user.password).toLowerCase().trim() === password.toLowerCase().trim())
-        || null;
+const handleLogin = (username, password) => {
+    return fetch(`${process.env.REACT_APP_SERVER_URL}/user`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+    })
+        .then(async (response) => {
+            return await response.json();
+        })
+        .catch((error) => {
+            console.error(error);
+            return false;
+        });
 };
 
 /**
