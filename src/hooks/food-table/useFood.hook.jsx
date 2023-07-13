@@ -5,33 +5,17 @@ const useFood = () => {
     /**
     * To give a types fo the food table
     * @type {Array<{
-    *  id: String;
+    *  _id: String;
     *  name: String;
     *  image: String;
     *  amount: Number;
     *  calories: Number;
+    *  addedBy:string
     * }>[]} 
     */
-    const [foodTable, setFoodTable] = React.useState(JSON.parse(localStorage.getItem('food_table')) || []);
+    const [foodTable, setFoodTable] = React.useState([]);
     const [addNew, setAddNew] = React.useState(true);
-    const [imageFile, setImageFile] = React.useState('');
     const user = React.useContext(UserContext);
-    console.log(user);
-    /**
-     * To add new item to the table and edit the local storage to the new table
-     * @param {{
-     *  id:String;
-     *  name:String;
-     *  image:String;
-     *  amount:Number;
-     *  calories:Number;
-     * }} food 
-     */
-    const addFoodItem = (food) => {
-        const newTable = [...foodTable, food];
-        setFoodTable(newTable);
-        localStorage.setItem('food_table', JSON.stringify(newTable));
-    };
 
     /**
      * To delete item from the table and edit the local storage to the new table
@@ -40,7 +24,6 @@ const useFood = () => {
     const deleteFoodItem = (id) => {
         const newTable = foodTable.filter((food) => (food.id !== id));
         setFoodTable(newTable);
-        localStorage.setItem('food_table', JSON.stringify(newTable));
     };
 
     /**
@@ -76,21 +59,29 @@ const useFood = () => {
     * Handler function for the form onSubmit event.
     * @param {React.FormEvent<HTMLFormElement>} e Event object.
     */
-    const handleAddFood = (e) => {
+    const handleAddFood = async (e) => {
         e.preventDefault();
-        const id = String(new Date().getMilliseconds()) + " " + String(new Date());
         const name = e.target.name.value; e.target.name.value = '';
-        const image = imageFile; setImageFile(''); e.target.image.value = '';
+        const image = e.target.image.value; e.target.image.value = '';
         const amount = Number(e.target.amount.value); e.target.amount.value = '';
         const calories = Number(e.target.calories.value); e.target.calories.value = '';
 
-        const food = {
-            id, name, image, amount, calories
-        };
+        const food = { name, image, amount, calories, addedBy: user.user._id };
+        const addItem = await foodService.AddFood(food);
+        console.log(addItem);
+        if (addItem) {
 
-
-
-        addFoodItem(food);
+            if (addItem.status === 201) {
+                alert(addItem.message);
+                await getFoodItems();
+            }
+            else {
+                alert(addItem.message);
+            }
+        }
+        else {
+            alert('Internal Server Error');
+        }
     };
 
     const getFoodItems = async () => {
@@ -110,20 +101,9 @@ const useFood = () => {
         }
     };
 
-    /**
-    * Handler function for the file change event.
-    * @param {React.FormEvent<HTMLFormElement>} e Event object.
-    */
-    const handleImageChange = (e) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(e.target.files[0]);
-        reader.addEventListener('load', () => {
-            setImageFile(reader.result);
-        });
-    };
-
     React.useMemo(async () => {
         await getFoodItems();
+        // eslint-disable-next-line
     }, []);
 
     return {
@@ -134,7 +114,6 @@ const useFood = () => {
         showAddNew,
         hideAddNew,
         handleAddFood,
-        handleImageChange,
     };
 };
 
