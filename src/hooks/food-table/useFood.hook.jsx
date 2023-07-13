@@ -19,32 +19,50 @@ const useFood = () => {
 
     /**
      * To delete item from the table and edit the local storage to the new table
-     * @param {String} id 
+     * @param {String} _id 
      */
-    const deleteFoodItem = (id) => {
-        const newTable = foodTable.filter((food) => (food.id !== id));
-        setFoodTable(newTable);
+    const deleteFoodItem = async (_id) => {
+        const deleteItem = await foodService.deleteFood(_id, user.user._id);
+        if (deleteItem) {
+            if (deleteItem.status === 200) {
+                await getFoodItems();
+                alert(deleteItem.message);
+            }
+            else {
+                alert(deleteItem.message);
+            }
+        }
+        else {
+            alert('Internal Server Error');
+        }
     };
 
     /**
      * To edit the food item in the table and add the newTable in localStorage
      * @param {{
-     *  id:String;
+     *  _id:String;
      *  name:String;
      *  image:String;
      *  amount:Number;
      *  calories:Number;
      * }} food 
      */
-    const editFoodItem = (food) => {
-        const newTable = foodTable.map(item => {
-            if (food.id === item.id) {
-                item = food;
+    const editFoodItem = async (food) => {
+        console.log(food);
+        food.addedBy = user.user._id;
+        const updateFood = await foodService.updateFood(food);
+        if (updateFood) {
+            if (updateFood.status === 200) {
+                await getFoodItems();
+                alert(updateFood.message);
             }
-            return item;
-        });
-        setFoodTable(newTable);
-        localStorage.setItem('food_table', JSON.stringify(newTable));
+            else {
+                alert(updateFood.message);
+            }
+        }
+        else {
+            alert('Internal Server Error');
+        }
     };
 
     const showAddNew = () => {

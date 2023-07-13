@@ -19,7 +19,7 @@ import EditFood from '../edit-food/edit-food.component';
  *  calories: number;
  *  }) => void
  *  food:{
- *      id: string;
+ *      _id: string;
  *      name: string;
  *      image: string;
  *      amount: number;
@@ -43,7 +43,7 @@ const FoodItem = (props) => {
                         <h5> calories: {props.food.calories + " Kcal"} </h5>
                         <div className='buttons'>
                             <CustomSpaceSplit>
-                                <span onClick={() => { props.deleteFoodItem(props.food.id); }}>
+                                <span onClick={() => { props.deleteFoodItem(props.food._id); }}>
                                     <Trash
                                         size={22}
                                         color="#046c41"
