@@ -1,6 +1,6 @@
 import './edit-food.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Input from '../../common/input/input';
 import { Button } from 'antd';
 
