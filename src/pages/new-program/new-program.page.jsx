@@ -19,7 +19,7 @@ const NewProgram = () => {
         dispatch,
         setAddCard
     } = useProgram();
-
+    console.log("Client in new Program", client);
     return (
         <div className='newProgram'>
             <AddFoodCard

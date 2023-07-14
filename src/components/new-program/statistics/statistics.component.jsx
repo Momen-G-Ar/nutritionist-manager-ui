@@ -60,6 +60,7 @@ const Stat = ({ calories, meals }) => {
  * @returns 
 */
 const Statistics = ({ client, activeDay }) => {
+    console.log('Client in statistics', client);
     return (
         <div className='statistics'>
             <h3>
@@ -67,6 +68,7 @@ const Statistics = ({ client, activeDay }) => {
             </h3>
             <div className='state'>
                 {
+                    client.status.saturday &&
                     (activeDay === 'saturday') ? <Stat calories={client.status.saturday.calories} meals={client.status.saturday.meals} />
                         : (activeDay === 'sunday') ? <Stat calories={client.status.sunday.calories} meals={client.status.sunday.meals} />
                             : (activeDay === 'monday') ? <Stat calories={client.status.monday.calories} meals={client.status.monday.meals} />
