@@ -5,20 +5,21 @@ import React from 'react';
 import { Button } from 'antd';
 
 /**
- * NOTE: The actual component is under this one 
- * Just a small component to make the actual component more readable
- * @param {Number} calories 
- * @param {Number} meals 
+ * 
+ * @param {{
+ *  meals:Number;
+ *  calories:Number;
+ * }} props 
  * @returns 
  */
-const Stat = ({ calories, meals }) => {
+const Stat = (props) => {
     return (
         <>
             <span>
-                Total Calories(day): {calories}  Kcal
+                Total Calories(day): {props.calories}  Kcal
             </span>
             <span>
-                Number of Meals: {meals} Meals
+                Number of Meals: {props.meals} Meals
             </span>
         </>
     );
@@ -60,7 +61,6 @@ const Stat = ({ calories, meals }) => {
  * @returns 
 */
 const Statistics = ({ client, activeDay }) => {
-    console.log('Client in statistics', client);
     return (
         <div className='statistics'>
             <h3>
@@ -68,15 +68,8 @@ const Statistics = ({ client, activeDay }) => {
             </h3>
             <div className='state'>
                 {
-                    client.status.saturday &&
-                    (activeDay === 'saturday') ? <Stat calories={client.status.saturday.calories} meals={client.status.saturday.meals} />
-                        : (activeDay === 'sunday') ? <Stat calories={client.status.sunday.calories} meals={client.status.sunday.meals} />
-                            : (activeDay === 'monday') ? <Stat calories={client.status.monday.calories} meals={client.status.monday.meals} />
-                                : (activeDay === 'tuesday') ? <Stat calories={client.status.tuesday.calories} meals={client.status.tuesday.meals} />
-                                    : (activeDay === 'wednesday') ? <Stat calories={client.status.wednesday.calories} meals={client.status.wednesday.meals} />
-                                        : (activeDay === 'thursday') ? <Stat calories={client.status.thursday.calories} meals={client.status.thursday.meals} />
-                                            : (activeDay === 'friday') ? <Stat calories={client.status.friday.calories} meals={client.status.friday.meals} />
-                                                : null
+                    client.status[activeDay] &&
+                    <Stat calories={client.status[activeDay].calories} meals={client.status[activeDay].meals} />
                 }
             </div>
             <div className='saveButton'>
