@@ -8,7 +8,6 @@ import { Button } from 'antd';
  * Form to add food to the foodTable
  * @param {{
  * handleAddFood: (e: React.FormEvent<HTMLFormElement>) => void
- * handleImageChange: () => void
  * }} props 
  * @returns 
  */
@@ -25,8 +24,7 @@ const AddFoodForm = (props) => {
                     <Input
                         name='image'
                         label='image src'
-                        type={'file'}
-                        onChange={props.handleImageChange}
+                        type={'text'}
                         required
                     />
                     <Input

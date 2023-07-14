@@ -1,21 +1,10 @@
-import { useMemo, useState } from "react";
-
+import React from "react";
+import foodService from '../../services/food';
+import { UserContext } from "../../components/providers/user-provider.component";
 const useAddFood = () => {
-    const [foodTable] = useState(JSON.parse(localStorage.getItem('food_table')) || []);
-    const [table, setTable] = useState([]);
-    const [selected, setSelected] = useState(0);
-
-    /**
-     * To store the names of the foods in a new table
-     * @param {Array<>} foodTable 
-    */
-    const getTable = () => {
-        let newTable = [];
-        foodTable.forEach((food) => {
-            newTable.push({ value: food.name, label: food.name.toUpperCase() });
-        });
-        return newTable;
-    };
+    const [state, setState] = React.useState({ foodTable: [], table: [] });
+    const [selected, setSelected] = React.useState(0);
+    const user = React.useContext(UserContext);
 
     /**
      * To display the selected food
@@ -23,7 +12,7 @@ const useAddFood = () => {
      */
     const handleSelectChange = (value) => {
         let fi = false;
-        table.forEach((name, i) => {
+        state.table.forEach((name, i) => {
             if (name.value === value) {
                 fi = true;
                 setSelected(i);
@@ -33,15 +22,35 @@ const useAddFood = () => {
             setSelected(0);
     };
 
-    useMemo(() => {
-        const newTab = getTable();
-        setTable(newTab);
+    const getFoodItems = async () => {
+        const items = await foodService.getAllFoods(user.user._id, true);
+        if (items) {
+            if (items.status === 200) {
+                const newTable1 = items.value.foodTable;
+                let newTable2=[];
+                newTable1.forEach((food) => {
+                    newTable2.push({ value: food.name, label: food.name.toUpperCase() });
+                });
+                setState({ foodTable: newTable1, table: newTable2 });
+            }
+            else {
+                setState({ foodTable: [], table: [] });
+                alert(items.message);
+            }
+        }
+        else {
+            alert('Internal Server Error');
+        }
+    };
+
+    React.useMemo(async () => {
+        await getFoodItems();
         // eslint-disable-next-line
-    }, [foodTable]);
+    }, []);
 
     return {
-        table,
-        foodTable,
+        table: state.table,
+        foodTable: state.foodTable,
         selected,
         handleSelectChange,
     };

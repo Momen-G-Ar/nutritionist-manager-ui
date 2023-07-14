@@ -19,7 +19,6 @@ const NewProgram = () => {
         dispatch,
         setAddCard
     } = useProgram();
-
     return (
         <div className='newProgram'>
             <AddFoodCard

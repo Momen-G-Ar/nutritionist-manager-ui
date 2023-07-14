@@ -17,10 +17,10 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='left'>
-                <span className='heartbeat'>
+                <span className='heartbeat' onClick={() => { navigate('/home-page', { replace: true }); }}>
                     <Heartbeat size={32} color="#01660c" weight="bold" />
                 </span>
-                <span className='titleInHeader'>
+                <span className='titleInHeader' onClick={() => { navigate('/home-page', { replace: true }); }}>
                     nutritionist clinic
                 </span>
             </div>
