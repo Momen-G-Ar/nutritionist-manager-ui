@@ -28,7 +28,9 @@
     justify-content: flex-start;
     align-items: center;
     height: 45vh;
+    min-height: 400px;
     width: 25vw;
+    min-width: 350px;
     background-color: #fff;
     z-index: 2;
     opacity: 1;
