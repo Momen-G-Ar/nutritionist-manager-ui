@@ -20,7 +20,6 @@ import Input from './../../common/input/input';
  */
 const AddFoodCard = (props) => {
     const { table, selected, handleSelectChange, foodTable } = useAddFood();
-
     /**
      * To add the food to the active day
      * @param {React.FormEvent<HTMLFormElement>} e 
@@ -41,15 +40,15 @@ const AddFoodCard = (props) => {
         <div className='wrapperInAddCard' style={{ display: props.style.display }}>
             <div className='addCard' >
                 <form onSubmit={(e) => handleAddFood(e)}>
-                    <div className='inputInAddCard'>
-                        <Select
-                            defaultValue={table[0] || 'none'}
-                            className='select'
-                            options={table}
-                            onChange={handleSelectChange}
-                        />
-                        <Input type={'number'} label={'Amount'} required name='amount' />
-                    </div>
+                        <div className='inputInAddCard'>
+                            <Select
+                                defaultValue={(table[0] && table[0].label)? table[0].label : 'none'}
+                                className='select'
+                                options={table}
+                                onChange={handleSelectChange}
+                            />
+                            <Input type={'number'} label={'Amount'} required name='amount' />
+                        </div>
                     <div className='foodCardInAddCard'>
                         <FoodCard ind={selected} food={foodTable[selected]} />
                     </div>

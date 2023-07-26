@@ -35,7 +35,7 @@ import { useNavigate } from 'react-router-dom';
 * }}
 */
 const initialClient = {
-    id: '', info: { name: '', phone: 0, email: '', date: '', city: '' },
+    info: { name: '', phone: 0, email: '', date: '', city: '' },
     days: {
         saturday: [], sunday: [], monday: [], tuesday: [],
         wednesday: [], thursday: [], friday: []
@@ -53,9 +53,9 @@ const useProgram = () => {
     const [activeDay, setActiveDay] = useState('saturday');
     const [client, dispatch] = useReducer(reducer, initialClient);
     const [addCard, setAddCard] = useState(false);
-    const { user, editUser } = useContext(UserContext);
+    const user = useContext(UserContext);
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         if (!user)
             navigate('/login', { replace: true });
@@ -67,20 +67,14 @@ const useProgram = () => {
     */
     const handleAddProgram = (e) => {
         e.preventDefault();
-        const name = e.target.name.value; e.target.name.value = '';
-        const phone = e.target.phone.value; e.target.phone.value = '';
-        const email = e.target.email.value; e.target.email.value = '';
-        const date = e.target.dater.value; e.target.dater.value = '';
+        const name = e.target.name.value;
+        const phone = e.target.phone.value;
+        const email = e.target.email.value;
+        const date = e.target.dater.value;
         const city = selectedCity;
 
-        const id = name + ' ' + new Date().toLocaleDateString() + ' ' + date;
         const info = { name, phone, email, date, city };
-
-        let newUser = { ...user };
-        newUser.ids.push(id);
-
-        editUser(newUser);
-        dispatch({ type: 'SAVE_CLIENT', info: info, id: id });
+        dispatch({ type: 'SAVE_CLIENT', info: info, userId: user.user._id });
     };
 
     return {

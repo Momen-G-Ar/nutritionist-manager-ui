@@ -62,6 +62,7 @@ const AddPersonInfo = (props) => {
                     name='dater'
                     label='birth date'
                     required
+                    style={{ width: 250 }}
                 />
                 <div className='selectInPersonInfo'>
                     <label>
@@ -72,7 +73,7 @@ const AddPersonInfo = (props) => {
                     <Select
                         onChange={value => props.setSelectedCity(value)}
                         defaultValue="Hebron"
-                        style={{ width: 320, height: 32 }}
+                        style={{ width: 275, height: 32 }}
                         options={optionsOfSelect}
                     />
                 </div>
