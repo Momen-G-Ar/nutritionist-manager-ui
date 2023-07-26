@@ -17,13 +17,19 @@ const useViewPrograms = () => {
             navigate('/login', { replace: true });
         }
     }, [user, navigate]);
-
+    
+    const getPrograms = async () => {
+        const allClients = await programsService.getPrograms(myParams.search);
+        setClientTable(allClients.value.value || []);
+    }
+    
     /**
      * Handler function for the form onSubmit event.
      * @param {React.FormEvent<HTMLFormElement>} e Event object.
     */
     const handleSearchChange = async(e) => {
         setParam('search', e.target.value);
+        await getPrograms();
     };
 
     /**
@@ -32,12 +38,13 @@ const useViewPrograms = () => {
      */
     const handleDeleteClient = async (clientId) => {
         dispatch({ type: 'DELETE_CLIENT', _id: clientId });
+        await getPrograms();
     };
 
+
     useMemo(async () => {
-        const allClients = await programsService.getPrograms(myParams.search);
-        setClientTable(allClients.value.value || []);
-    }, [myParams]);
+        await getPrograms();
+    }, [myParams.search]);
 
 
     return {

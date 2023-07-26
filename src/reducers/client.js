@@ -83,12 +83,7 @@ const reducer = (client, action) => {
                     ...client.status,
                     [action.day]: {
                         meals: newDay.length,
-                        calories: newDay
-                            .reduce(
-                                (prev, food) => prev + Number(food.calories),
-                                0
-                            )
-                            .toFixed(2),
+                        calories: Number(newDay.reduce((prev, food) => prev + Number(food.calories), 0).toFixed(2)),
                     },
                 },
             };
@@ -108,19 +103,16 @@ const reducer = (client, action) => {
                     ...client.status,
                     [action.day]: {
                         meals: newDay.length,
-                        calories: newDay
-                            .reduce(
-                                (prev, food) => prev + Number(food.calories),
-                                0
-                            )
-                            .toFixed(2),
+                        calories: Number(newDay.reduce((prev, food) => prev + Number(food.calories), 0).toFixed(2)),
                     },
                 },
             };
         }
 
         case "SAVE_CLIENT": {
+            console.log(client.status);
             let finalClient = {
+                status: { ...client.status },
                 days: { ...client.days },
                 client: {
                     ...action.info,

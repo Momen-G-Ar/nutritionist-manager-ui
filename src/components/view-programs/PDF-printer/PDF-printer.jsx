@@ -37,7 +37,6 @@ import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, Image } from '
  * @returns 
  */
 const PDFPrinter = (props) => {
-    console.log(props.client);
     return (
         <PDFDownloadLink
             // document={<MyDoc client={props.client} />}
