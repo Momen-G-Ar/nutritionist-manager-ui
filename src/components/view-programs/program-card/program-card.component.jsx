@@ -77,7 +77,7 @@ const ProgramCard = ({client, handleDeleteClient}) => {
             </h2>
             <div className='buttons'>
                 <div className='pdf'>
-                    <PDFPrinter client={client.client}>
+                    <PDFPrinter client={client}>
                         <Button
                             type='primary'
                             style={buttonStyle}

@@ -39,8 +39,8 @@ import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, Image } from '
 const PDFPrinter = (props) => {
     return (
         <PDFDownloadLink
-            // document={<MyDoc client={props.client} />}
-            fileName={`${props.client.name}.pdf`}
+            document={<MyDoc client={props.client} />}
+            fileName={`${props.client.client.name}.pdf`}
         >
             {props.children}
         </PDFDownloadLink>
@@ -82,7 +82,9 @@ export default PDFPrinter;
  * }}} client 
  * @returns 
  */
-const MyDoc = (client) => {
+const MyDoc = ({client}) => {
+    console.log(client);
+
     return (
         <Document>
             <Page size="A4" style={styles.page}>
@@ -112,7 +114,7 @@ const MyDoc = (client) => {
                     <Text style={styles.h5InInfo}> Programs: </Text>
                     <Text style={styles.dayName}> Saturday: </Text>
                     {
-                        client.client.days.saturday.map((food, i) => {
+                        client.days.saturday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -131,7 +133,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Sunday: </Text>
                     {
-                        client.client.days.sunday.map((food, i) => {
+                        client.days.sunday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -150,7 +152,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Monday: </Text>
                     {
-                        client.client.days.monday.map((food, i) => {
+                        client.days.monday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -169,7 +171,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Tuesday: </Text>
                     {
-                        client.client.days.tuesday.map((food, i) => {
+                        client.days.tuesday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -188,7 +190,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Wednesday: </Text>
                     {
-                        client.client.days.wednesday.map((food, i) => {
+                        client.days.wednesday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -207,7 +209,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Thursday: </Text>
                     {
-                        client.client.days.thursday.map((food, i) => {
+                        client.days.thursday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />
@@ -226,7 +228,7 @@ const MyDoc = (client) => {
                 <View style={styles.program}>
                     <Text style={styles.dayName}> Friday: </Text>
                     {
-                        client.client.days.friday.map((food, i) => {
+                        client.days.friday.map((food, i) => {
                             return (
                                 <View key={i + food.name} style={styles.card}>
                                     <Image style={styles.image} src={food.image} />

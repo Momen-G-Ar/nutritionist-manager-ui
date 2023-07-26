@@ -110,7 +110,6 @@ const reducer = (client, action) => {
         }
 
         case "SAVE_CLIENT": {
-            console.log(client.status);
             let finalClient = {
                 status: { ...client.status },
                 days: { ...client.days },
