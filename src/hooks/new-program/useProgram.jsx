@@ -67,10 +67,10 @@ const useProgram = () => {
     */
     const handleAddProgram = (e) => {
         e.preventDefault();
-        const name = e.target.name.value;
-        const phone = e.target.phone.value;
-        const email = e.target.email.value;
-        const date = e.target.dater.value;
+        const name = e.target.name.value; e.target.name.value = '';
+        const phone = e.target.phone.value; e.target.phone.value = '';
+        const email = e.target.email.value; e.target.email.value = '';
+        const date = e.target.dater.value; e.target.dater.value = '';
         const city = selectedCity;
 
         const info = { name, phone, email, date, city };

@@ -16,7 +16,6 @@ const ViewPrograms = () => {
         handleDeleteClient,
         handleSearchChange
     } = useViewPrograms();
-
     return (
         <div className='viewPrograms'>
             <h2 className='titleInViewPrograms'>

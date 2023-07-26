@@ -84,7 +84,10 @@ const reducer = (client, action) => {
                     [action.day]: {
                         meals: newDay.length,
                         calories: newDay
-                            .reduce((prev, food) => prev + Number(food.calories), 0)
+                            .reduce(
+                                (prev, food) => prev + Number(food.calories),
+                                0
+                            )
                             .toFixed(2),
                     },
                 },
@@ -140,69 +143,6 @@ const reducer = (client, action) => {
                     return client;
                 });
             return {
-                info: { name: '', phone: 0, email: '', date: '', city: '' },
-                days: {
-                    saturday: [],
-                    sunday: [],
-                    monday: [],
-                    tuesday: [],
-                    wednesday: [],
-                    thursday: [],
-                    friday: [],
-                },
-                status: {
-                    saturday: { meals: 0, calories: 0 },
-                    sunday: { meals: 0, calories: 0 },
-                    monday: { meals: 0, calories: 0 },
-                    tuesday: { meals: 0, calories: 0 },
-                    wednesday: { meals: 0, calories: 0 },
-                    thursday: { meals: 0, calories: 0 },
-                    friday: { meals: 0, calories: 0 }
-                }
-            };
-        }
-
-        case "DELETE_CLIENT": {
-            // delete in user in session storage
-            let newUserInSessionStorage = JSON.parse(
-                sessionStorage.getItem("user")
-            );
-            newUserInSessionStorage.ids = newUserInSessionStorage.ids.filter(
-                (id) => id !== action.id
-            );
-            sessionStorage.setItem(
-                "user",
-                JSON.stringify(newUserInSessionStorage)
-            );
-
-            // delete in client in local storage
-            let newClientsInLocalStorage =
-                JSON.parse(localStorage.getItem("clients")) || [];
-            newClientsInLocalStorage = newClientsInLocalStorage.filter(
-                (client) => client.id !== action.id
-            );
-            localStorage.setItem(
-                "clients",
-                JSON.stringify(newClientsInLocalStorage)
-            );
-
-            // delete in users in local storage
-            let newUsersInLocalStorage =
-                JSON.parse(localStorage.getItem("users")) || [];
-            for (let i = 0; i < newUsersInLocalStorage.length; i++) {
-                if (newUsersInLocalStorage[i].userName === action.user) {
-                    newUsersInLocalStorage[i].ids = newUsersInLocalStorage[
-                        i
-                    ].ids.filter((id) => id !== action.id);
-                }
-            }
-            localStorage.setItem(
-                "users",
-                JSON.stringify(newUsersInLocalStorage)
-            );
-
-            return {
-                id: "",
                 info: { name: "", phone: 0, email: "", date: "", city: "" },
                 days: {
                     saturday: [],
@@ -223,6 +163,17 @@ const reducer = (client, action) => {
                     friday: { meals: 0, calories: 0 },
                 },
             };
+        }
+
+        case "DELETE_CLIENT": {
+            programService
+                .deleteProgram(action._id)
+                .then((result) => {
+                    alert(result.message);
+                })
+                .catch((error) => console.error(error));
+
+            return client;
         }
 
         default:

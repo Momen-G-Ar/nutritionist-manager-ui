@@ -37,10 +37,11 @@ import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, Image } from '
  * @returns 
  */
 const PDFPrinter = (props) => {
+    console.log(props.client);
     return (
         <PDFDownloadLink
-            document={<MyDoc client={props.client} />}
-            fileName={`${props.client.info.name}.pdf`}
+            // document={<MyDoc client={props.client} />}
+            fileName={`${props.client.name}.pdf`}
         >
             {props.children}
         </PDFDownloadLink>
@@ -53,7 +54,7 @@ export default PDFPrinter;
  * 
  * @param {{
  *  client:{
- *      id:String;
+ *      _id:String;
  *      info:{
  *          name:String;
  *          phone:Number;
@@ -87,25 +88,25 @@ const MyDoc = (client) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <Text style={styles.name}>
-                    {client.client.info.name}
+                    {client.client.name}
                 </Text>
                 <View style={styles.info}>
                     <Text style={styles.h5InInfo}>Information:</Text>
                     <Text style={styles.spanInInfo}>
                         Birth of Date:&nbsp;
-                        {client.client.info.date}
+                        {client.client.date}
                     </Text>
                     <Text style={styles.spanInInfo}>
                         City:&nbsp;
-                        {client.client.info.city}
+                        {client.client.city}
                     </Text>
                     <Text style={styles.spanInInfo}>
                         Email:&nbsp;
-                        {client.client.info.email}
+                        {client.client.email}
                     </Text>
                     <Text style={styles.spanInInfo}>
                         Phone:&nbsp;
-                        {client.client.info.phone}
+                        {client.client.phone}
                     </Text>
                 </View>
                 <View style={styles.program}>

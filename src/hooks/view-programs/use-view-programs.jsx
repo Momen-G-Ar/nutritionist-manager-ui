@@ -1,11 +1,13 @@
-import { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { UserContext } from './../../components/providers/user-provider.component';
 import useParams from './../params.hook';
 import { useNavigate } from 'react-router-dom';
 import useProgram from './../new-program/useProgram';
+import programsService from '../../services/programs';
 
 const useViewPrograms = () => {
-    const { user, setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
+    const [clientTable, setClientTable] = React.useState([]);
     const { myParams, setParam } = useParams();
     const navigate = useNavigate();
     const { dispatch } = useProgram();
@@ -20,38 +22,22 @@ const useViewPrograms = () => {
      * Handler function for the form onSubmit event.
      * @param {React.FormEvent<HTMLFormElement>} e Event object.
     */
-    const handleSearchChange = (e) => {
+    const handleSearchChange = async(e) => {
         setParam('search', e.target.value);
     };
 
     /**
      * To delete the client from the clients
-     * @param {} theClient 
+     * @param {String} clientId 
      */
-    const handleDeleteClient = (theClient) => {
-        dispatch({ type: 'DELETE_CLIENT', id: theClient.id, user: user.userName });
-        let newUserInSessionStorage = { ...user };
-        newUserInSessionStorage.ids = newUserInSessionStorage.ids.filter(id => id !== theClient.id);
-        setUser(newUserInSessionStorage);
+    const handleDeleteClient = async (clientId) => {
+        dispatch({ type: 'DELETE_CLIENT', _id: clientId });
     };
 
-    const clientTable = useMemo(() => {
-        const allClients = JSON.parse(localStorage.getItem('clients')) || [];
-        let newTable = allClients.filter((client) => {
-            if (user.ids.find((id) => client.id === id))
-                return client;
-            else
-                return null;
-        });
-        newTable = newTable.filter((client) => {
-            let match = true;
-            if (myParams.search === '')
-                return match;
-            match &= (client.info.name.toLowerCase().trim().includes(myParams.search.toLowerCase().trim()));
-            return match;
-        });
-        return newTable || [];
-    }, [myParams, user]);
+    useMemo(async () => {
+        const allClients = await programsService.getPrograms(myParams.search);
+        setClientTable(allClients.value.value || []);
+    }, [myParams]);
 
 
     return {

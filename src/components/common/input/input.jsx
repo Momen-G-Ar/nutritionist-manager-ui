@@ -10,7 +10,6 @@ import React from 'react';
  */
 const Input = (props) => {
     const { label, ...inputProps } = props;
-    console.log(props.width);
     return (
         <div className="inputGroup">
             {
