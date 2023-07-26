@@ -44,6 +44,7 @@ const useViewPrograms = () => {
 
     useMemo(async () => {
         await getPrograms();
+        // eslint-disable-next-line
     }, [myParams.search]);
 
 
