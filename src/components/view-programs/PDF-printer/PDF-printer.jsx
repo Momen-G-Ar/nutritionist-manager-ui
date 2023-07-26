@@ -83,7 +83,6 @@ export default PDFPrinter;
  * @returns 
  */
 const MyDoc = ({client}) => {
-    console.log(client);
 
     return (
         <Document>

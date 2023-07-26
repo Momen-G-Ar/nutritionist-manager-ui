@@ -1,6 +1,6 @@
 import './program-card.css';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button } from 'antd';
 import { FilePdf, Trash } from 'phosphor-react';
@@ -52,20 +52,19 @@ const buttonStyle = {
  * }} props 
  * @returns 
  */
-const ProgramCard = ({client, handleDeleteClient}) => {
+const ProgramCard = ({ client, handleDeleteClient }) => {
     const [calories, setCalories] = useState(0.00);
-    console.log(client._id);
-    // useEffect(() => {
-    //     let cal = 0.0;
-    //     cal += Number(props.client.status.saturday.calories);
-    //     cal += Number(props.client.status.sunday.calories);
-    //     cal += Number(props.client.status.monday.calories);
-    //     cal += Number(props.client.status.tuesday.calories);
-    //     cal += Number(props.client.status.wednesday.calories);
-    //     cal += Number(props.client.status.thursday.calories);
-    //     cal += Number(props.client.status.friday.calories);
-    //     setCalories(cal.toFixed(2));
-    // }, [props.client]);
+    useEffect(() => {
+        let cal = 0.0;
+        cal += Number(client.status.saturday[0].calories);
+        cal += Number(client.status.sunday[0].calories);
+        cal += Number(client.status.monday[0].calories);
+        cal += Number(client.status.tuesday[0].calories);
+        cal += Number(client.status.wednesday[0].calories);
+        cal += Number(client.status.thursday[0].calories);
+        cal += Number(client.status.friday[0].calories);
+        setCalories(cal.toFixed(2));
+    }, [client.status]);
 
     return (
         <div className='programCard'>
@@ -73,7 +72,7 @@ const ProgramCard = ({client, handleDeleteClient}) => {
                 {client.client.name}
             </h2>
             <h2 className='calsInCard'>
-                Calories: {0} Kcal
+                Calories: {calories} Kcal
             </h2>
             <div className='buttons'>
                 <div className='pdf'>
